@@ -51,4 +51,20 @@ class Pelunasan_un extends CI_Controller {
 		$this->M_pelunasan_un->hapus($id);
 		redirect('pelunasan_un');
 	}
+
+	public function cetak()
+	{
+		$data['title']                = 'Rekap Pelunasan UN';
+		
+		$tahun_ajaran                 = $this->M_pengaturan->tampil()->row_array();
+		$data['pelunasan_un']         = $this->M_pelunasan_un->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['total']                = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['total_dana_keluar_un'] = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->row_array();
+		$data['tahun_ajaran']         = $tahun_ajaran;
+		$this->template->view('pelunasan_un/cetak', $data);
+
+		?>
+			<script>window.print()</script>
+		<?php
+	}
 }

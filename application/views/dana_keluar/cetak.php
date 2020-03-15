@@ -45,44 +45,40 @@
   <h3 class="text-center mb-4 mt-4">Rekapitulasi Dana Keluar Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
 
   <table class="table table-bordered">
-    <thead>
-      <tr>
-        <td class="text-center">No</td>
-        <th>Keperluan</th>
-        <th>Jenis Dana</th>
-        <th>Tanggal</th>
-        <th>Uang Keluar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <?php $no=1; ?>
-      <?php foreach( $dana_keluar as $dk ) : ?>
-      <tr>
-        <td width="10" class="text-center"><?= $no++; ?></td>
-        <td><?= $dk['keperluan']; ?></td>
-        <td><?= $dk['jenis_dana']; ?></td>
-        <td><?= tgl($dk['tanggal']); ?></td>
-        <td><?= "Rp.".number_format($dk['uang_keluar'], 0, ',', '.'); ?></td>
-      </tr>
-      <?php endforeach; ?>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th colspan="4">Jumlah</th>
-        <th>
-          <?php 
-            $total = ($total[0]['uang_keluar']);
-            echo "Rp.".number_format($total, 0, ',', '.');
-          ?>
-        </th>
-      </tr>
-    </tfoot>
+    <tr>
+      <td class="text-center">No</td>
+      <th>Keperluan</th>
+      <th>Jenis Dana</th>
+      <th>Tanggal</th>
+      <th>Uang Keluar</th>
+    </tr>
+
+    <?php $no=1; ?>
+    <?php foreach( $dana_keluar as $dk ) : ?>
+    <tr>
+      <td width="10" class="text-center"><?= $no++; ?></td>
+      <td><?= $dk['keperluan']; ?></td>
+      <td><?= $dk['jenis_dana']; ?></td>
+      <td><?= tgl($dk['tanggal']); ?></td>
+      <td><?= "Rp.".number_format($dk['uang_keluar'], 0, ',', '.'); ?></td>
+    </tr>
+    <?php endforeach; ?>
+
+    <tr>
+      <th colspan="4">Jumlah</th>
+      <th>
+        <?php 
+          $total = ($total[0]['uang_keluar']);
+          echo "Rp.".number_format($total, 0, ',', '.');
+        ?>
+      </th>
+    </tr>
   </table>
 
-  <div class="row" style="margin-top: 150px;">
-    <div class="col-md-6"></div>
-    <div class="col-md-6 text-center">
-      <h6 class="mb-5 pb-4 font-weight-bold">Martapura, <?= date('d').' '.bulan().' '.date('Y'); ?> <br> Kepala Madrasah</h6>
+  <div class="row" style="margin-top: 100px;">
+    <div class="col-md-9"></div>
+    <div class="col-md-3 text-center">
+      <h6 class="mb-5 pb-3 font-weight-bold">Martapura, <?= date('d').' '.bulan().' '.date('Y'); ?> <br> Kepala Madrasah</h6>
       <h6 class="font-weight-bold">Syamsul Arifin, S.Pd.I</h6>
     </div>
   </div>

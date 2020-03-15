@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Mar 2020 pada 16.01
+-- Waktu pembuatan: 15 Mar 2020 pada 12.40
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.1.14
 
@@ -55,12 +55,15 @@ INSERT INTO `dana_keluar` (`id`, `keperluan`, `jenis_dana`, `tanggal`, `uang_kel
 (25, 'Aqua 3 dus + Sabun', 'Infaq', '2020-02-26', 60000, '2019/2020'),
 (26, 'ATK + USB Lan', 'Denda', '2020-03-02', 602000, '2019/2020'),
 (27, 'Bata', 'Denda', '2020-03-03', 60000, '2019/2020'),
-(28, 'Keyboard Eksternal + Fotokopi 300 Lembar', 'Denda', '2020-03-08', 170000, '2019/2020'),
-(30, 'Air mineral + Konsumsi', 'Denda', '2020-03-09', 115500, '2019/2020'),
-(31, 'Pinjam', 'Denda', '2020-03-08', 85000, '2019/2020'),
-(32, 'Konsumsi + Transfer Pengawas', 'Denda', '2020-03-10', 420000, '2019/2020'),
-(33, 'Konsumsi + Token Listrik', 'Denda', '2020-03-11', 173000, '2019/2020'),
-(34, 'Aqua 3 Dus + Bensin', 'Denda', '2020-03-13', 75000, '2019/2020');
+(37, 'Cable Ties + Tisu Ukuran Sedang', 'Denda', '2020-03-05', 44000, '2019/2020'),
+(38, 'Keyboard Eksternal + Fotokopi 300 Lembar', 'Denda', '2020-03-08', 170000, '2019/2020'),
+(39, 'Air mineral 1 dus + Konsumsi', 'Denda', '2020-03-09', 115500, '2019/2020'),
+(40, 'Pinjam', 'Denda', '2020-03-09', 85000, '2019/2020'),
+(41, 'Konsumsi + Transfer Pengawas', 'Denda', '2020-03-10', 420000, '2019/2020'),
+(42, 'Konsumsi + Token Listrik', 'Denda', '2020-03-11', 173000, '2019/2020'),
+(43, 'Aqua 3 Dus + Bensin', 'Denda', '2020-03-13', 75000, '2019/2020'),
+(44, 'Konsumsi Ujian Sekolah Hari ke-1', 'Denda', '2020-03-14', 69000, '2019/2020'),
+(45, 'Pena 2 Kotak, Lem Kertas besar, Tisu Ukuran Sedang', 'Denda', '2020-03-15', 57000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -86,8 +89,8 @@ INSERT INTO `dana_keluar_un` (`id`, `keperluan`, `tanggal`, `uang_keluar`, `tahu
 (3, 'UN Server', '0000-00-00', 200000, '2019/2020'),
 (4, 'Konsumsi', '0000-00-00', 50000, '2019/2020'),
 (5, 'Konsumsi', '0000-00-00', 300000, '2019/2020'),
-(6, 'Bu Nafis', '0000-00-00', 400000, '2019/2020'),
-(7, 'Bu Wiwit', '2020-03-01', 1800000, '2019/2020');
+(7, 'Bu Wiwit', '2020-03-01', 1800000, '2019/2020'),
+(8, 'Bu Nafis', '2020-03-14', 400000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -223,7 +226,7 @@ CREATE TABLE `sisa_dana` (
 --
 
 INSERT INTO `sisa_dana` (`id`, `jumlah`) VALUES
-(1, 3739500);
+(1, 3783500);
 
 -- --------------------------------------------------------
 
@@ -305,13 +308,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `dana_keluar`
 --
 ALTER TABLE `dana_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_keluar_un`
 --
 ALTER TABLE `dana_keluar_un`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_masuk`

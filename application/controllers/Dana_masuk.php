@@ -54,7 +54,7 @@ class Dana_masuk extends CI_Controller {
 
 	public function cetak()
 	{
-		$data['title'] = 'Cetak Dana Masuk';
+		$data['title'] = 'Rekap Dana Masuk';
 		
 		$tahun_ajaran              = $this->M_pengaturan->tampil()->row_array();
 		$data['dana_masuk']        = $this->M_dana_masuk->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
