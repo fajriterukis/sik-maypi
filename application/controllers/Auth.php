@@ -30,7 +30,7 @@ class Auth extends CI_Controller {
 
 				$this->session->set_userdata($data);
 
-	        	redirect('home');
+	        	redirect(base_url());
 	        } else {
 	        	$this->session->set_flashdata('message', '
 	        		<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
