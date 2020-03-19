@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Mar 2020 pada 08.14
+-- Waktu pembuatan: 19 Mar 2020 pada 06.13
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.1.14
 
@@ -53,22 +53,15 @@ INSERT INTO `dana_keluar` (`id`, `keperluan`, `jenis_dana`, `tanggal`, `uang_kel
 (23, 'Bendera', 'Infaq', '2020-02-12', 50000, '2019/2020'),
 (24, 'Aqua+Ojek Bendera', 'Infaq', '2020-02-18', 50000, '2019/2020'),
 (25, 'Aqua 3 dus + Sabun', 'Infaq', '2020-02-26', 60000, '2019/2020'),
-(26, 'ATK + USB Lan', 'Denda', '2020-03-02', 602000, '2019/2020'),
+(26, 'ATK', 'Denda', '2020-03-02', 472000, '2019/2020'),
 (27, 'Bata', 'Denda', '2020-03-03', 60000, '2019/2020'),
 (37, 'Cable Ties + Tisu Ukuran Sedang', 'Denda', '2020-03-05', 44000, '2019/2020'),
-(38, 'Keyboard Eksternal + Fotokopi 300 Lembar', 'Denda', '2020-03-08', 170000, '2019/2020'),
-(39, 'Air mineral 1 dus + Konsumsi', 'Denda', '2020-03-09', 115500, '2019/2020'),
-(40, 'Pinjam', 'Denda', '2020-03-09', 85000, '2019/2020'),
-(41, 'Konsumsi + Transfer Pengawas', 'Denda', '2020-03-10', 420000, '2019/2020'),
-(42, 'Konsumsi + Token Listrik', 'Denda', '2020-03-11', 173000, '2019/2020'),
-(43, 'Aqua 3 Dus + Bensin', 'Denda', '2020-03-13', 75000, '2019/2020'),
-(44, 'Konsumsi Ujian Madrasah Hari ke-1', 'Denda', '2020-03-14', 69000, '2019/2020'),
-(45, 'Pena 2 Kotak, Lem Kertas besar, Tisu Ukuran Sedang', 'Denda', '2020-03-15', 57000, '2019/2020'),
-(46, 'Konsumsi Ujian Madrasah Hari ke-2', 'Denda', '2020-03-16', 30000, '2019/2020'),
-(47, 'Fotokopi Soal Ujian Madrasah', 'Denda', '2020-03-16', 72000, '2019/2020'),
-(48, 'Konsumsi Ujian Madrasah Hari ke-3', 'Denda', '2020-03-17', 45000, '2019/2020'),
-(49, 'H. Bu Rini', 'Denda', '2020-03-17', 50000, '2019/2020'),
-(50, 'Konsumsi Ujian Madrasah Hari ke-4', 'Denda', '2020-03-18', 35000, '2019/2020');
+(51, 'Fotokopi brosur dan Formulir 300 lembar', 'Denda', '2020-03-08', 60000, '2019/2020'),
+(52, 'Pinjam', 'Denda', '2020-03-09', 85000, '2019/2020'),
+(53, 'Aqua 3 Dus + Bensin', 'Denda', '2020-03-13', 75000, '2019/2020'),
+(54, 'Pena 2 Kotak, Lem Kertas besar, Tisu Ukuran Sedang', 'Denda', '2020-03-15', 57000, '2019/2020'),
+(55, 'Bu Rini Pinjam', 'Denda', '2020-03-17', 50000, '2019/2020'),
+(56, 'Bensin service printer', 'Denda', '2020-03-19', 10000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -94,8 +87,19 @@ INSERT INTO `dana_keluar_un` (`id`, `keperluan`, `tanggal`, `uang_keluar`, `tahu
 (3, 'UN Server', '0000-00-00', 200000, '2019/2020'),
 (4, 'Konsumsi', '0000-00-00', 50000, '2019/2020'),
 (5, 'Konsumsi', '0000-00-00', 300000, '2019/2020'),
-(7, 'H. Bu Wiwit', '2020-03-01', 1800000, '2019/2020'),
-(8, 'H. Bu Nafis', '2020-03-14', 400000, '2019/2020');
+(7, 'Bu Wiwit Pinjam', '2020-03-01', 1800000, '2019/2020'),
+(8, 'Bu Nafis Pinjam', '2020-03-14', 400000, '2019/2020'),
+(9, 'USB Lan', '2020-03-02', 130000, '2019/2020'),
+(10, 'Keyboard Eksternal 2 Unit', '2020-03-08', 110000, '2019/2020'),
+(11, 'Konsumsi UAMBN-BK Hari Ke-1', '2020-03-09', 115500, '2019/2020'),
+(12, 'Konsumsi UAMBN-BK Hari Ke-2 + Transfer Pengawas', '2020-03-10', 420000, '2019/2020'),
+(13, 'Konsumsi UAMBN-BK Hari Ke-3 + Token Listrik', '2020-03-11', 173000, '2019/2020'),
+(14, 'Konsumsi Ujian Madrasah Hari ke-1', '2020-03-14', 69000, '2019/2020'),
+(15, 'Konsumsi Ujian Madrasah Hari ke-2', '2020-03-16', 30000, '2019/2020'),
+(16, 'Fotokopi Soal Ujian Madrasah', '2020-03-16', 72000, '2019/2020'),
+(17, 'Konsumsi Ujian Madrasah Hari ke-3', '2020-03-17', 45000, '2019/2020'),
+(19, 'Konsumsi Ujian Madrasah Hari ke-4', '2020-03-18', 35000, '2019/2020'),
+(20, 'Konsumsi Ujian Madrasah Hari ke-5', '2020-03-19', 40000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -167,7 +171,7 @@ INSERT INTO `pelunasan_un` (`id`, `nama`, `tanggal`, `nominal`, `tahun_ajaran`) 
 (25, 'MAHARANI', '2020-02-24', 1500000, '2019/2020'),
 (26, 'MELIYANTI', '2019-10-08', 1250000, '2019/2020'),
 (27, 'MIFTAHUL MAHMUDAH', '0000-00-00', 800000, '2019/2020'),
-(28, 'NOVI AGUSTINI', '2020-03-17', 1350000, '2019/2020'),
+(28, 'NOVI AGUSTINI', '2020-03-19', 1500000, '2019/2020'),
 (29, 'RIZKI RAMADHANI', '2020-02-06', 500000, '2019/2020'),
 (30, 'RODI HIDAYAT', '2020-01-08', 500000, '2019/2020'),
 (31, 'RONI TRIYANTO', '2020-03-16', 500000, '2019/2020'),
@@ -177,7 +181,7 @@ INSERT INTO `pelunasan_un` (`id`, `nama`, `tanggal`, `nominal`, `tahun_ajaran`) 
 (35, 'VICO SANJAYA', '0000-00-00', 0, '2019/2020'),
 (36, 'WAHYU WIRAYUDA', '0000-00-00', 0, '2019/2020'),
 (37, 'WULAN MEILANI', '0000-00-00', 0, '2019/2020'),
-(38, 'ZULIA RAHMAWATI', '2020-09-26', 1500000, '2019/2020'),
+(38, 'ZULIA RAHMAWATI', '2019-09-26', 1500000, '2019/2020'),
 (39, 'TAMIM NURAINI', '0000-00-00', 0, '2019/2020'),
 (40, 'LIDIA ASTUTI', '2020-01-13', 200000, '2019/2020'),
 (41, 'WARDAH NURUL JANAH', '0000-00-00', 0, '2019/2020');
@@ -313,13 +317,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `dana_keluar`
 --
 ALTER TABLE `dana_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_keluar_un`
 --
 ALTER TABLE `dana_keluar_un`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_masuk`
