@@ -40,8 +40,12 @@
               <?php 
                 if($pu['nominal'] >= 1500000 ){
                   echo "<span class='badge badge-primary'>Lunas</span>";
-                } else {
-                  echo "<span class='badge badge-danger'>Belum Lunas</span>";
+                } else if($pu['nominal'] < 1500000){
+
+                  $kurang = $pu['nominal'] - 1500000;
+
+                  echo "Rp.".number_format($kurang, 0, ',', '.');
+
                 }
                ?>
              </td>
