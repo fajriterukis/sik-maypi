@@ -2,6 +2,10 @@
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary float-left">Dana Keluar UN</h6>
     <a href="<?= base_url('dana_keluar_un/tambah'); ?>" class="btn btn-primary btn-sm float-right">Tambah</a>
+    <a href="<?= base_url('dana_keluar_un/cetak') ?>" class="btn btn-success btn-sm float-right mr-2">
+      <i class="fa fa-print"></i>
+      Cetak Laporan
+    </a>
   </div>
   <div class="card-body">
     <div class="table-responsive">

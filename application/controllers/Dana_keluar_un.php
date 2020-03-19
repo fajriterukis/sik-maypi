@@ -49,4 +49,19 @@ class Dana_keluar_un extends CI_Controller {
 		$this->M_dana_keluar_un->hapus($id);
 		redirect('dana_keluar_un');
 	}
+
+	public function cetak()
+	{
+		$data['title']          = 'Rekap Dana Keluar UN';
+		
+		$tahun_ajaran           = $this->M_pengaturan->tampil()->row_array();
+		$data['dana_keluar_un'] = $this->M_dana_keluar_un->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['total']          = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['tahun_ajaran']   =$tahun_ajaran;
+		$this->template->view('dana_keluar_un/cetak', $data);
+
+		?>
+			<script>window.print()</script>
+		<?php
+	}
 }
