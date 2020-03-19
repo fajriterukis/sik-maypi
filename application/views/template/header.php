@@ -80,7 +80,7 @@
 
       <li class="nav-item <?= active('dana_keluar_un'); ?>">
         <a class="nav-link" href="<?= base_url('dana_keluar_un'); ?>">
-          <i class="fas fa-fw fa-upload"></i>
+          <i class="fas fa-fw fa-file-upload"></i>
           <span>Dana Keluar UN</span></a>
       </li>
 
@@ -92,13 +92,13 @@
 
       <li class="nav-item <?= active('pelunasan_un'); ?>">
         <a class="nav-link" href="<?= base_url('pelunasan_un'); ?>">
-          <i class="fas fa-fw fa-list"></i>
+          <i class="fas fa-fw fa-file-signature"></i>
           <span>Pelunasan Ujian Nasional</span></a>
       </li>
 
       <li class="nav-item <?= active('sisa_dana'); ?>">
         <a class="nav-link" href="<?= base_url('sisa_dana'); ?>">
-          <i class="fas fa-fw fa-list"></i>
+          <i class="fas fa-fw fa-calendar-alt"></i>
           <span>Sisa Dana Tahun Lalu</span></a>
       </li>
 
