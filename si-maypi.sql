@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Apr 2020 pada 04.32
+-- Waktu pembuatan: 16 Apr 2020 pada 04.17
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.1.14
 
@@ -57,12 +57,17 @@ INSERT INTO `dana_keluar` (`id`, `keperluan`, `jenis_dana`, `tanggal`, `uang_kel
 (27, 'Bata', 'Denda', '2020-03-03', 60000, '2019/2020'),
 (37, 'Cable Ties + Tisu Ukuran Sedang', 'Denda', '2020-03-05', 44000, '2019/2020'),
 (51, 'Fotokopi brosur dan Formulir 300 lembar', 'Denda', '2020-03-08', 60000, '2019/2020'),
-(52, 'Fajri Pinjam', 'Denda', '2020-03-09', 105000, '2019/2020'),
 (53, 'Aqua 3 Dus + Bensin', 'Denda', '2020-03-13', 75000, '2019/2020'),
 (54, 'Pena 2 Kotak, Lem Kertas besar, Tisu Ukuran Sedang', 'Denda', '2020-03-15', 57000, '2019/2020'),
 (55, 'Bu Rini Pinjam', 'Denda', '2020-03-17', 50000, '2019/2020'),
 (56, 'Bensin service printer', 'Denda', '2020-03-19', 10000, '2019/2020'),
-(57, 'Bu Rini Pinjam 2', 'Denda', '2020-03-28', 300000, '2019/2020');
+(57, 'Bu Rini Pinjam 2', 'Denda', '2020-03-28', 300000, '2019/2020'),
+(59, 'Emis', 'Denda', '2020-04-08', 100000, '2019/2020'),
+(60, 'Konsumsi saat Covid-19', 'Denda', '2020-04-11', 10000, '2019/2020'),
+(61, 'Karpet', 'Denda', '2020-04-13', 165000, '2019/2020'),
+(62, 'Konsumsi saat Covid-19', 'Denda', '2020-04-14', 20000, '2019/2020'),
+(63, 'Semen 1 sak', 'Denda', '2020-04-14', 60000, '2019/2020'),
+(64, 'Konsumsi saat Covid-19', 'Denda', '2020-04-15', 20000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -103,7 +108,9 @@ INSERT INTO `dana_keluar_un` (`id`, `keperluan`, `tanggal`, `uang_keluar`, `tahu
 (20, 'Konsumsi Ujian Madrasah Hari ke-5', '2020-03-19', 40000, '2019/2020'),
 (21, 'Konsumsi Ujian Madrasah Hari ke-6', '2020-03-20', 80000, '2019/2020'),
 (22, 'Konsumsi Ujian Madrasah Hari ke-7', '2020-03-21', 280000, '2019/2020'),
-(23, 'Gaji Kegiatan Ujian', '2020-03-21', 2650000, '2019/2020');
+(23, 'Gaji Kegiatan Ujian', '2020-03-21', 2650000, '2019/2020'),
+(24, 'Operasional UAMBN', '2020-04-15', 1580000, '2019/2020'),
+(25, 'Operasional UAMBN', '2020-04-16', 500000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -322,13 +329,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `dana_keluar`
 --
 ALTER TABLE `dana_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_keluar_un`
 --
 ALTER TABLE `dana_keluar_un`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_masuk`
