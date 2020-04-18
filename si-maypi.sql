@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 16 Apr 2020 pada 04.17
+-- Waktu pembuatan: 18 Apr 2020 pada 08.51
 -- Versi server: 10.1.30-MariaDB
 -- Versi PHP: 7.1.14
 
@@ -67,7 +67,12 @@ INSERT INTO `dana_keluar` (`id`, `keperluan`, `jenis_dana`, `tanggal`, `uang_kel
 (61, 'Karpet', 'Denda', '2020-04-13', 165000, '2019/2020'),
 (62, 'Konsumsi saat Covid-19', 'Denda', '2020-04-14', 20000, '2019/2020'),
 (63, 'Semen 1 sak', 'Denda', '2020-04-14', 60000, '2019/2020'),
-(64, 'Konsumsi saat Covid-19', 'Denda', '2020-04-15', 20000, '2019/2020');
+(64, 'Konsumsi saat Covid-19', 'Denda', '2020-04-15', 20000, '2019/2020'),
+(65, 'Konsumsi saat Covid-19', 'Denda', '2020-04-16', 20000, '2019/2020'),
+(66, 'Konsumsi saat Covid-19', 'Denda', '2020-04-17', 15000, '2019/2020'),
+(67, 'Konsumsi saat Covid-19', 'Denda', '2020-04-18', 15000, '2019/2020'),
+(68, 'Jenguk Pak Bani', 'Denda', '2020-04-18', 200000, '2019/2020'),
+(69, '??', 'Denda', '2020-04-18', 500000, '2019/2020');
 
 -- --------------------------------------------------------
 
@@ -182,7 +187,7 @@ INSERT INTO `pelunasan_un` (`id`, `nama`, `tanggal`, `nominal`, `tahun_ajaran`) 
 (24, 'M. SHOLEH', '2020-01-23', 200000, '2019/2020'),
 (25, 'MAHARANI', '2020-02-24', 1500000, '2019/2020'),
 (26, 'MELIYANTI', '2019-10-08', 1250000, '2019/2020'),
-(27, 'MIFTAHUL MAHMUDAH', '0000-00-00', 800000, '2019/2020'),
+(27, 'MIFTAHUL MAHMUDAH', '2020-04-18', 1500000, '2019/2020'),
 (28, 'NOVI AGUSTINI', '2020-03-19', 1500000, '2019/2020'),
 (29, 'RIZKI RAMADHANI', '2020-02-06', 500000, '2019/2020'),
 (30, 'RODI HIDAYAT', '2020-01-08', 500000, '2019/2020'),
@@ -329,7 +334,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `dana_keluar`
 --
 ALTER TABLE `dana_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT untuk tabel `dana_keluar_un`
