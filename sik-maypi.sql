@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 18 Apr 2020 pada 08.51
--- Versi server: 10.1.30-MariaDB
--- Versi PHP: 7.1.14
+-- Generation Time: May 17, 2020 at 06:25 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `si-maypi`
+-- Database: `sik-maypi`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dana_keluar`
+-- Table structure for table `dana_keluar`
 --
 
 CREATE TABLE `dana_keluar` (
@@ -38,7 +37,7 @@ CREATE TABLE `dana_keluar` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dana_keluar`
+-- Dumping data for table `dana_keluar`
 --
 
 INSERT INTO `dana_keluar` (`id`, `keperluan`, `jenis_dana`, `tanggal`, `uang_keluar`, `tahun_ajaran`) VALUES
@@ -71,13 +70,23 @@ INSERT INTO `dana_keluar` (`id`, `keperluan`, `jenis_dana`, `tanggal`, `uang_kel
 (65, 'Konsumsi saat Covid-19', 'Denda', '2020-04-16', 20000, '2019/2020'),
 (66, 'Konsumsi saat Covid-19', 'Denda', '2020-04-17', 15000, '2019/2020'),
 (67, 'Konsumsi saat Covid-19', 'Denda', '2020-04-18', 15000, '2019/2020'),
-(68, 'Jenguk Pak Bani', 'Denda', '2020-04-18', 200000, '2019/2020'),
-(69, '??', 'Denda', '2020-04-18', 500000, '2019/2020');
+(68, 'Jenguk Pak Bani', 'Denda', '2020-04-18', 650000, '2019/2020'),
+(70, 'Konsumsi saat Covid-19+Air Mineral', 'Denda', '2020-04-20', 31000, '2019/2020'),
+(71, 'Konsumsi Menyambut Ramadhan', 'Denda', '2020-04-20', 150000, '2019/2020'),
+(72, 'Konsumsi saat Covid-19', 'Denda', '2020-04-21', 15000, '2019/2020'),
+(73, 'Bu Rini Beli Plastik', 'Denda', '2020-04-22', 5000, '2019/2020'),
+(74, 'Lifeboy Cair + Stela', 'Denda', '2020-05-03', 58000, '2019/2020'),
+(75, 'Fotocopy SK Kelulusan', 'Denda', '2020-05-04', 36000, '2019/2020'),
+(76, 'Fotocopy Soal MID', 'Denda', '2020-05-09', 245000, '2019/2020'),
+(77, 'Marjan Merah Coco Pandan Sedus', 'Denda', '2020-05-13', 198000, '2019/2020'),
+(78, 'Fajri Pinjam ', 'Denda', '2020-05-14', 52000, '2019/2020'),
+(79, 'Minyak Tropical 1 Liter 10 Sachet', 'Denda', '2020-05-14', 160000, '2019/2020'),
+(80, 'Susu Frisian Flag 10 Kaleng+Tisu Paseo', 'Denda', '2020-05-15', 145000, '2019/2020');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dana_keluar_un`
+-- Table structure for table `dana_keluar_un`
 --
 
 CREATE TABLE `dana_keluar_un` (
@@ -89,7 +98,7 @@ CREATE TABLE `dana_keluar_un` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dana_keluar_un`
+-- Dumping data for table `dana_keluar_un`
 --
 
 INSERT INTO `dana_keluar_un` (`id`, `keperluan`, `tanggal`, `uang_keluar`, `tahun_ajaran`) VALUES
@@ -120,7 +129,7 @@ INSERT INTO `dana_keluar_un` (`id`, `keperluan`, `tanggal`, `uang_keluar`, `tahu
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `dana_masuk`
+-- Table structure for table `dana_masuk`
 --
 
 CREATE TABLE `dana_masuk` (
@@ -132,7 +141,7 @@ CREATE TABLE `dana_masuk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `dana_masuk`
+-- Dumping data for table `dana_masuk`
 --
 
 INSERT INTO `dana_masuk` (`id`, `jenis_dana`, `tanggal_masuk`, `nominal`, `tahun_ajaran`) VALUES
@@ -145,12 +154,14 @@ INSERT INTO `dana_masuk` (`id`, `jenis_dana`, `tanggal_masuk`, `nominal`, `tahun
 (12, 'Denda', '2020-03-07', 69000, '2019/2020'),
 (13, 'Denda', '2020-03-09', 181000, '2019/2020'),
 (14, 'Denda', '2020-03-13', 135000, '2019/2020'),
-(15, 'Denda', '2020-04-06', 18000, '2019/2020');
+(15, 'Denda', '2020-04-06', 18000, '2019/2020'),
+(16, 'Denda', '2020-05-11', 150000, '2019/2020'),
+(17, 'Denda', '2020-05-15', 300000, '2019/2020');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pelunasan_un`
+-- Table structure for table `pelunasan_un`
 --
 
 CREATE TABLE `pelunasan_un` (
@@ -162,7 +173,7 @@ CREATE TABLE `pelunasan_un` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pelunasan_un`
+-- Dumping data for table `pelunasan_un`
 --
 
 INSERT INTO `pelunasan_un` (`id`, `nama`, `tanggal`, `nominal`, `tahun_ajaran`) VALUES
@@ -199,14 +210,14 @@ INSERT INTO `pelunasan_un` (`id`, `nama`, `tanggal`, `nominal`, `tahun_ajaran`) 
 (36, 'WAHYU WIRAYUDA', '0000-00-00', 0, '2019/2020'),
 (37, 'WULAN MEILANI', '0000-00-00', 0, '2019/2020'),
 (38, 'ZULIA RAHMAWATI', '2019-09-26', 1500000, '2019/2020'),
-(39, 'TAMIM NURAINI', '0000-00-00', 0, '2019/2020'),
+(39, 'TAMIM NURAINI', '2020-05-06', 1000000, '2019/2020'),
 (40, 'LIDIA ASTUTI', '2020-01-13', 200000, '2019/2020'),
 (41, 'WARDAH NURUL JANAH', '0000-00-00', 0, '2019/2020');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembayaran_siswa`
+-- Table structure for table `pembayaran_siswa`
 --
 
 CREATE TABLE `pembayaran_siswa` (
@@ -221,7 +232,7 @@ CREATE TABLE `pembayaran_siswa` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pengaturan`
+-- Table structure for table `pengaturan`
 --
 
 CREATE TABLE `pengaturan` (
@@ -230,7 +241,7 @@ CREATE TABLE `pengaturan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `pengaturan`
+-- Dumping data for table `pengaturan`
 --
 
 INSERT INTO `pengaturan` (`id`, `tahun_ajaran`) VALUES
@@ -239,7 +250,7 @@ INSERT INTO `pengaturan` (`id`, `tahun_ajaran`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `sisa_dana`
+-- Table structure for table `sisa_dana`
 --
 
 CREATE TABLE `sisa_dana` (
@@ -248,7 +259,7 @@ CREATE TABLE `sisa_dana` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `sisa_dana`
+-- Dumping data for table `sisa_dana`
 --
 
 INSERT INTO `sisa_dana` (`id`, `jumlah`) VALUES
@@ -257,7 +268,7 @@ INSERT INTO `sisa_dana` (`id`, `jumlah`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -268,7 +279,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
@@ -279,101 +290,101 @@ INSERT INTO `user` (`id`, `nama`, `username`, `password`) VALUES
 --
 
 --
--- Indeks untuk tabel `dana_keluar`
+-- Indexes for table `dana_keluar`
 --
 ALTER TABLE `dana_keluar`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dana_keluar_un`
+-- Indexes for table `dana_keluar_un`
 --
 ALTER TABLE `dana_keluar_un`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `dana_masuk`
+-- Indexes for table `dana_masuk`
 --
 ALTER TABLE `dana_masuk`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pelunasan_un`
+-- Indexes for table `pelunasan_un`
 --
 ALTER TABLE `pelunasan_un`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pembayaran_siswa`
+-- Indexes for table `pembayaran_siswa`
 --
 ALTER TABLE `pembayaran_siswa`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `pengaturan`
+-- Indexes for table `pengaturan`
 --
 ALTER TABLE `pengaturan`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `sisa_dana`
+-- Indexes for table `sisa_dana`
 --
 ALTER TABLE `sisa_dana`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `dana_keluar`
+-- AUTO_INCREMENT for table `dana_keluar`
 --
 ALTER TABLE `dana_keluar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
--- AUTO_INCREMENT untuk tabel `dana_keluar_un`
+-- AUTO_INCREMENT for table `dana_keluar_un`
 --
 ALTER TABLE `dana_keluar_un`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
--- AUTO_INCREMENT untuk tabel `dana_masuk`
+-- AUTO_INCREMENT for table `dana_masuk`
 --
 ALTER TABLE `dana_masuk`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `pelunasan_un`
+-- AUTO_INCREMENT for table `pelunasan_un`
 --
 ALTER TABLE `pelunasan_un`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT untuk tabel `pembayaran_siswa`
+-- AUTO_INCREMENT for table `pembayaran_siswa`
 --
 ALTER TABLE `pembayaran_siswa`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `pengaturan`
+-- AUTO_INCREMENT for table `pengaturan`
 --
 ALTER TABLE `pengaturan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `sisa_dana`
+-- AUTO_INCREMENT for table `sisa_dana`
 --
 ALTER TABLE `sisa_dana`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
