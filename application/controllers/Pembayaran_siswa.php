@@ -27,9 +27,8 @@ class Pembayaran_siswa extends CI_Controller {
 		$this->template->view('pembayaran_siswa/tambah', $data);
 
 		if( isset($_POST['tambah']) ){
-			var_dump($this->input->post('tanggal'));
-			// $this->M_pembayaran_siswa->tambah();
-			// redirect('pembayaran_siswa');
+			$this->M_pembayaran_siswa->tambah();
+			redirect('pembayaran_siswa');
 		}
 	}
 
