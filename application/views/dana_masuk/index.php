@@ -49,7 +49,7 @@
             </th>
           </tr>
           <tr>
-            <th colspan="4">Jumlah Uang Denda</th>
+            <th colspan="4">Jumlah Dana Denda</th>
             <th>
               <?php 
                 $jumlah_uang_denda = ($jumlah_uang_denda['nominal']);

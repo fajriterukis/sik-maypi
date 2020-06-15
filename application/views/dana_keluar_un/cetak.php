@@ -63,7 +63,7 @@
     <?php endforeach; ?>
 
     <tr>
-      <th colspan="3">Jumlah</th>
+      <th colspan="3">Total</th>
       <th>
         <?php 
           $total = ($total[0]['uang_keluar']);
@@ -73,7 +73,7 @@
     </tr>
   </table>
 
-  <div class="row" style="margin-top: 100px;">
+  <div class="row" style="margin-top: 30px;">
     <div class="col-md-9"></div>
     <div class="col-md-3 text-center">
       <h6 class="mb-5 pb-3 font-weight-bold">Martapura, <?= date('d').' '.bulan().' '.date('Y'); ?> <br> Kepala Madrasah</h6>

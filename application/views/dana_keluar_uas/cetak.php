@@ -42,49 +42,31 @@
   <hr class="hr-1">
   <hr class="hr-2">
 
-  <h3 class="text-center mb-4 mt-4">Rekapitulasi Dana Masuk Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
+  <h3 class="text-center mb-4 mt-4">Rekapitulasi Dana Keluar UAS Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
 
   <table class="table table-bordered">
     <tr>
       <th class="text-center">No</th>
-      <th>Jenis Dana</th>
-      <th>Tanggal Masuk</th>
-      <th>Nominal</th>
+      <th>Keperluan</th>
+      <th>Tanggal</th>
+      <th>Uang Keluar</th>
     </tr>
 
     <?php $no=1; ?>
-    <?php foreach( $dana_masuk as $dm ) : ?>
+    <?php foreach( $dana_keluar_uas as $dku ) : ?>
     <tr>
       <td width="10" class="text-center"><?= $no++; ?></td>
-      <td><?= $dm['jenis_dana']; ?></td>
-      <td><?= tgl($dm['tanggal_masuk']); ?></td>
-      <td><?= "Rp.".number_format($dm['nominal'], 0, ',', '.'); ?></td>
+      <td><?= $dku['keperluan']; ?></td>
+      <td><?= tgl($dku['tanggal']); ?></td>
+      <td><?= "Rp.".number_format($dku['uang_keluar'], 0, ',', '.'); ?></td>
     </tr>
     <?php endforeach; ?>
 
     <tr>
-      <th colspan="3">Jumlah Dana Infaq</th>
-      <th>
-        <?php 
-          $jumlah_infaq = ($jumlah_infaq['nominal']);
-          echo "Rp.".number_format($jumlah_infaq, 0, ',', '.');
-         ?>
-      </th>
-    </tr>
-    <tr>
-      <th colspan="3">Jumlah Dana Denda</th>
-      <th>
-        <?php 
-          $jumlah_uang_denda = ($jumlah_uang_denda['nominal']);
-          echo "Rp.".number_format($jumlah_uang_denda, 0, ',', '.');
-         ?>
-      </th>
-    </tr>
-    <tr>
       <th colspan="3">Total</th>
       <th>
         <?php 
-          $total = ($total['nominal']);
+          $total = ($total[0]['uang_keluar']);
           echo "Rp.".number_format($total, 0, ',', '.');
         ?>
       </th>

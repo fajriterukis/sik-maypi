@@ -40,7 +40,7 @@
         </tbody>
         <tfoot>
           <tr>
-            <th colspan="4">Jumlah</th>
+            <th colspan="4">Total</th>
             <th>
               <?php 
                 $total = ($total[0]['uang_keluar']);

@@ -63,17 +63,17 @@
     <?php endforeach; ?>
 
     <tr>
-      <th colspan="3">Jumlah</th>
-      <th>
+      <th colspan="3">Total</th>
+      <th colspan="2">
         <?php 
-          $total = ($total[0]['nominal'] - $total_dana_keluar_un['uang_keluar']);
+          $total = $total[0]['nominal'];
           echo "Rp.".number_format($total, 0, ',', '.');
         ?>
       </th>
     </tr>
   </table>
 
-  <div class="row" style="margin-top: 100px;">
+  <div class="row" style="margin-top: 30px;">
     <div class="col-md-9"></div>
     <div class="col-md-3 text-center">
       <h6 class="mb-5 pb-3 font-weight-bold">Martapura, <?= date('d').' '.bulan().' '.date('Y'); ?> <br> Kepala Madrasah</h6>

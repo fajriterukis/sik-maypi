@@ -54,10 +54,10 @@
         </tbody>
         <tfoot>
           <tr>
-            <th colspan="4">Jumlah</th>
+            <th colspan="4">Total</th>
             <th colspan="2">
               <?php 
-                $total = ($total[0]['nominal'] - $total_dana_keluar_un['uang_keluar']);
+                $total = $total[0]['nominal'];
                 echo "Rp.".number_format($total, 0, ',', '.');
               ?>
             </th>

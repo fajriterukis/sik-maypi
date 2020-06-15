@@ -78,6 +78,12 @@
           <span>Dana Keluar</span></a>
       </li>
 
+      <li class="nav-item <?= active('pelunasan_un'); ?>">
+        <a class="nav-link" href="<?= base_url('pelunasan_un'); ?>">
+          <i class="fas fa-fw fa-file-signature"></i>
+          <span>Pelunasan UN</span></a>
+      </li>
+
       <li class="nav-item <?= active('dana_keluar_un'); ?>">
         <a class="nav-link" href="<?= base_url('dana_keluar_un'); ?>">
           <i class="fas fa-fw fa-file-upload"></i>
@@ -87,13 +93,13 @@
       <li class="nav-item <?= active('pembayaran_siswa'); ?>">
         <a class="nav-link" href="<?= base_url('pembayaran_siswa'); ?>">
           <i class="fas fa-fw fa-users"></i>
-          <span>Pembayaran Siswa</span></a>
+          <span>Pembayaran UAS</span></a>
       </li>
 
-      <li class="nav-item <?= active('pelunasan_un'); ?>">
-        <a class="nav-link" href="<?= base_url('pelunasan_un'); ?>">
-          <i class="fas fa-fw fa-file-signature"></i>
-          <span>Pelunasan Ujian Nasional</span></a>
+      <li class="nav-item <?= active('dana_keluar_uas'); ?>">
+        <a class="nav-link" href="<?= base_url('dana_keluar_uas'); ?>">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Dana Keluar UAS</span></a>
       </li>
 
       <li class="nav-item <?= active('sisa_dana'); ?>">
