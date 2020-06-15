@@ -90,8 +90,8 @@
           <span>Dana Keluar UN</span></a>
       </li>
 
-      <li class="nav-item <?= active('pembayaran_siswa'); ?>">
-        <a class="nav-link" href="<?= base_url('pembayaran_siswa'); ?>">
+      <li class="nav-item <?= active('pembayaran_uas'); ?>">
+        <a class="nav-link" href="<?= base_url('pembayaran_uas'); ?>">
           <i class="fas fa-fw fa-users"></i>
           <span>Pembayaran UAS</span></a>
       </li>

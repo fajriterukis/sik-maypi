@@ -12,7 +12,7 @@ class Home extends CI_Controller {
 		$this->load->model('M_sisa_dana');
 		$this->load->model('M_pelunasan_un');
 		$this->load->model('M_dana_keluar_un');
-		$this->load->model('M_pembayaran_siswa');
+		$this->load->model('M_pembayaran_uas');
 		$this->load->model('M_dana_keluar_uas');
 		$this->load->model('M_pengaturan');
 	}
@@ -27,7 +27,7 @@ class Home extends CI_Controller {
 		$data['total_pelunasan_un']     = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['total_dana_keluar_un']   = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->row_array();
 
-		$data['total_pembayaran_siswa'] = $this->M_pembayaran_siswa->total($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['total_pembayaran_uas'] = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['total_dana_keluar_uas'] = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->row_array();
 
 		$data['tahun_ajaran']           = $this->M_pengaturan->tampil()->row_array();

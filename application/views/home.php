@@ -10,9 +10,9 @@
   $total_dana_keluar_Un      = $total_dana_keluar_un['uang_keluar'];
   $sisa_dana_un              = $total_pelunasan_un-$total_dana_keluar_Un;
   
-  $total_pembayaran_siswa    = $total_pembayaran_siswa[0]['nominal'];
+  $total_pembayaran_uas    = $total_pembayaran_uas[0]['nominal'];
   $total_dana_keluar_uas     = $total_dana_keluar_uas['uang_keluar'];
-  $sisa_dana_uas             = $total_pembayaran_siswa-$total_dana_keluar_uas;
+  $sisa_dana_uas             = $total_pembayaran_uas-$total_dana_keluar_uas;
   
 
 ?>
@@ -134,12 +134,12 @@
 <div class="row mb-2">
   <div class="col-xl-4 col-md-4">
     <div class="card border-left-primary shadow h-100 py-2">
-      <a href="<?= base_url('pembayaran_siswa'); ?>" class="nav-link">
+      <a href="<?= base_url('pembayaran_uas'); ?>" class="nav-link">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Pembayaran UAS</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($total_pembayaran_siswa, 0, ',', '.'); ?></div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($total_pembayaran_uas, 0, ',', '.'); ?></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-file-download fa-2x text-gray-300"></i>

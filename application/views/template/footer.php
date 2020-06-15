@@ -74,7 +74,7 @@
         stateSave: true
       });
 
-      $('#pembayaran_siswa').DataTable({
+      $('#pembayaran_uas').DataTable({
         stateSave: true
       });
       
