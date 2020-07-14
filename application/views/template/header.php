@@ -69,13 +69,13 @@
       <li class="nav-item <?= active('dana_masuk'); ?>">
         <a class="nav-link" href="<?= base_url('dana_masuk'); ?>">
           <i class="fas fa-fw fa-download"></i>
-          <span>Dana Masuk</span></a>
+          <span>Dana Masuk Infaq & Denda</span></a>
       </li>
 
       <li class="nav-item <?= active('dana_keluar'); ?>">
         <a class="nav-link" href="<?= base_url('dana_keluar'); ?>">
           <i class="fas fa-fw fa-upload"></i>
-          <span>Dana Keluar</span></a>
+          <span>Dana Keluar Infaq & Denda</span></a>
       </li>
 
       <li class="nav-item <?= active('pelunasan_un'); ?>">

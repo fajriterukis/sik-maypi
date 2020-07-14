@@ -9,20 +9,9 @@ class M_sisa_dana extends CI_Model {
 		return $query;
 	}
 
-	public function tampil_perId($id)
+	public function tampilPerTahun($tahun_lalu)
 	{
-		$query = $this->db->get_where('sisa_dana', ['id' => $id]);
+		$query = $this->db->get_where('sisa_dana', ['tahun_ajaran' => $tahun_lalu]);
 		return $query;
-	}
-
-	public function edit($id)
-	{
-		
-		$data = [
-			'jumlah' => $this->input->post('jumlah')
-		];
-
-		$this->db->where('id', $id);
-		$this->db->update('sisa_dana', $data);
 	}
 }

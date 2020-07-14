@@ -60,10 +60,7 @@
   <script>
     $(document).ready(function(){
       $('#dana_masuk').DataTable( {
-        // dom: 'Bfrtip',
-        // buttons: [
-        //   'excel'        
-        // ]
+        stateSave: true
       });
 
       $('#dana_keluar').DataTable({

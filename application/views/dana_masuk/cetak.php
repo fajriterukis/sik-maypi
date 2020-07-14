@@ -42,7 +42,7 @@
   <hr class="hr-1">
   <hr class="hr-2">
 
-  <h3 class="text-center mb-4 mt-4">Rekapitulasi Dana Masuk Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
+  <h3 class="text-center mb-4 mt-4">Rekapitulasi Dana Masuk Infaq dan Denda Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
 
   <table class="table table-bordered">
     <tr>
