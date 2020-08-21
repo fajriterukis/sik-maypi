@@ -8,6 +8,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="robots" content="noindex">
+  <meta name="googlebot" content="noindex">
 
   <title>SIK-MAYPI <?= @$title == '' ? '' : ' - '.$title; ?></title>
 
@@ -98,7 +100,7 @@
 
       <li class="nav-item <?= active('dana_keluar_uas'); ?>">
         <a class="nav-link" href="<?= base_url('dana_keluar_uas'); ?>">
-          <i class="fas fa-fw fa-users"></i>
+          <i class="fas fa-fw fa-file-upload"></i>
           <span>Dana Keluar UAS</span></a>
       </li>
 
@@ -173,7 +175,7 @@
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a class="dropdown-item" href="#" onclick="return alert('Gek dibuat fitur ini kalo niat')">
+                <a class="dropdown-item" href="<?= base_url('profile'); ?>">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>

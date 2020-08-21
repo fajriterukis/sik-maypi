@@ -95,7 +95,7 @@
 		    <tr>
 		    	<td>Sisa Dana UN Tahun Lalu</td>
 		    	<td></td>
-		    	<td><?= "Rp.".number_format(0, 0, ',', '.'); ?></td>
+		    	<td><?= "Rp.".number_format($sisa_dana['un'], 0, ',', '.'); ?></td>
 		    	<td>+</td>
 		    </tr>
 		    <tr>
@@ -136,7 +136,7 @@
 		     <tr>
 		    	<td>Sisa Dana UAS Tahun Lalu</td>
 		    	<td></td>
-		    	<td><?= "Rp.".number_format(0, 0, ',', '.'); ?></td>
+		    	<td><?= "Rp.".number_format($sisa_dana['uas'], 0, ',', '.'); ?></td>
 		    	<td>+</td>
 		    </tr>
 		    <tr>
