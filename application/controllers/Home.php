@@ -91,9 +91,9 @@ class Home extends CI_Controller {
 		$total_pembayaran_uas  = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->row_array()['nominal'];
 		$total_dana_keluar_uas = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->row_array()['uang_keluar'];
 		
-		$sisa_denda_infaq      = ($total_dana_masuk+$sisa_dana['denda_infaq'])-$total_dana_keluar;
-		$sisa_dana_un          = ($total_pelunasan_un+$sisa_dana['un'])-$total_dana_keluar_Un;
-		$sisa_dana_uas         = ($total_pembayaran_uas+$sisa_dana['uas'])-$total_dana_keluar_uas;
+		$sisa_denda_infaq      = ($total_dana_masuk+$sisa_dana['denda_infaq'])-($total_dana_keluar+total_hutang('Infaq_Denda'));
+		$sisa_dana_un          = ($total_pelunasan_un+$sisa_dana['un'])-($total_dana_keluar_Un+total_hutang('UN'));
+		$sisa_dana_uas         = ($total_pembayaran_uas+$sisa_dana['uas'])-($total_dana_keluar_uas+total_hutang('UAS'));
 
 		$query = $this->db->get_where('sisa_dana', ['tahun_ajaran' => $tahun_ajaran['tahun_ajaran']])->num_rows();
 

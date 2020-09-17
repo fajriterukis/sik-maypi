@@ -6,6 +6,7 @@ class Profile extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		cekLogin();
 		$this->load->library('form_validation');
 		$this->load->model('M_user');
 	}
@@ -23,7 +24,7 @@ class Profile extends CI_Controller {
 
 		if( isset($_POST['simpan']) ){
 			$id = userLogin()['id'];
-			
+
 			$this->M_user->edit_nama($id);
 			redirect('profile');
 		}
@@ -36,7 +37,7 @@ class Profile extends CI_Controller {
 
 		if( isset($_POST['simpan']) ){
 			$id = userLogin()['id'];
-			
+
 			$this->M_user->edit_username($id);
 			redirect('auth/logout');
 		}

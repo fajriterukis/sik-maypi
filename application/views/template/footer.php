@@ -67,15 +67,23 @@
         stateSave: true
       });
 
-      $('#dana_keluar_un').DataTable({
+      $('#pembayaran_uas').DataTable({
         stateSave: true
       });
 
-      $('#pembayaran_uas').DataTable({
+      $('#dana_keluar_uas').DataTable({
         stateSave: true
       });
       
       $('#pelunasan_un').DataTable({
+        stateSave: true
+      });
+
+      $('#dana_keluar_un').DataTable({
+        stateSave: true
+      });
+
+      $('#hutang').DataTable({
         stateSave: true
       });
     });

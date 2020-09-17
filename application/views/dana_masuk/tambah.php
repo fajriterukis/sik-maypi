@@ -12,8 +12,6 @@
 				      <option value="">Pilih Jenis Dana</option>
 				      <option value="Infaq">Infaq</option>
 				      <option value="Denda">Denda</option>
-				      <option value="Semester">Semester</option>
-				      <option value="Ujian">UN</option>
 				    </select>
 				  </div>
 				  <div class="form-group">
@@ -22,10 +20,10 @@
 				  </div>
 				  <div class="form-group">
 				    <label>Nominal (Rupiah)</label>
-				    <input type="number" class="form-control" name="nominal" required>		 
+				    <input type="number" class="form-control" name="nominal" required>
 				  </div>
 				  <div class="form-group">
-				    <input type="hidden" class="form-control" name="tahun_ajaran" value="<?= $tahun_ajaran['tahun_ajaran']; ?>" readonly required>		 
+				    <input type="hidden" class="form-control" name="tahun_ajaran" value="<?= $tahun_ajaran['tahun_ajaran']; ?>" readonly required>
 				  </div>
 				  <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah</button>
 				</form>

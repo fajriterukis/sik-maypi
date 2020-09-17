@@ -13,13 +13,10 @@
 				  <div class="form-group">
 				    <label>Jenis Dana</label>
 				    <select class="form-control" name="jenis_dana">
-					  
 					  <?php $jenis_dana = $dana_keluar['jenis_dana'];?>
 
 				      <option value="Infaq" <?php if($jenis_dana=="Infaq"){echo "selected";} ?>>Infaq</option>
 				      <option value="Denda" <?php if($jenis_dana=="Denda"){echo "selected";} ?>>Denda</option>
-				      <option value="Semester" <?php if($jenis_dana=="Semester"){echo "selected";} ?>>Semester</option>
-				      <option value="Ujian" <?php if($jenis_dana=="Ujian"){echo "selected";} ?>>Ujian</option>
 				    </select>
 				  </div>
 				  <div class="form-group">

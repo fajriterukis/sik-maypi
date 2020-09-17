@@ -6,6 +6,7 @@ class Dana_keluar_uas extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
+		cekLogin();
 		$this->load->model('M_dana_keluar_uas');
 		$this->load->model('M_pengaturan');
 	}
@@ -52,7 +53,7 @@ class Dana_keluar_uas extends CI_Controller {
 	public function cetak()
 	{
 		$data['title']           = 'Rekap Dana Keluar UAS';
-		
+
 		$tahun_ajaran            = $this->M_pengaturan->tampil()->row_array();
 		$data['dana_keluar_uas'] = $this->M_dana_keluar_uas->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['total']           = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();

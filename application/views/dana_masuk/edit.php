@@ -9,13 +9,11 @@
 				  <div class="form-group">
 				    <label>Jenis Dana</label>
 				    <select class="form-control" name="jenis_dana">
-					  
+
 					  <?php $jenis_dana = $dana_masuk['jenis_dana'];?>
 
 				      <option value="Infaq" <?php if($jenis_dana=="Infaq"){echo "selected";} ?>>Infaq</option>
 				      <option value="Denda" <?php if($jenis_dana=="Denda"){echo "selected";} ?>>Denda</option>
-				      <option value="Semester" <?php if($jenis_dana=="Semester"){echo "selected";} ?>>Semester</option>
-				      <option value="Ujian" <?php if($jenis_dana=="Ujian"){echo "selected";} ?>>Ujian</option>
 				    </select>
 				  </div>
 				  <div class="form-group">
@@ -24,7 +22,7 @@
 				  </div>
 				  <div class="form-group">
 				    <label>Nominal</label>
-				    <input type="number" class="form-control" name="nominal" value="<?= $dana_masuk['nominal']; ?>" required>		 
+				    <input type="number" class="form-control" name="nominal" value="<?= $dana_masuk['nominal']; ?>" required>
 				  </div>
 				  <button type="submit" name="simpan" class="btn btn-primary float-right">Simpan</button>
 				</form>

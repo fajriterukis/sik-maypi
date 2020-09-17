@@ -4,17 +4,17 @@
   $sisa_dana_uas_old             = $sisa_dana['uas'];
   
   $total_dana_masuk              = $total_dana_masuk['nominal'];
-  $total_dana_keluar             = $total_dana_keluar['uang_keluar'];
+  $total_dana_keluar             = $total_dana_keluar['uang_keluar']+total_hutang('Infaq_Denda');
   $dana_masuk_dan_tahun_lalu     = $total_dana_masuk+$sisa_denda_infaq_old;
   $sisa_denda_infaq_saat_ini     = $dana_masuk_dan_tahun_lalu-$total_dana_keluar;
   
   $total_pelunasan_un            = $total_pelunasan_un['nominal'];
-  $total_dana_keluar_Un          = $total_dana_keluar_un['uang_keluar'];
+  $total_dana_keluar_Un          = $total_dana_keluar_un['uang_keluar']+total_hutang('UN');
   $pelunasan_un_dan_tahun_lalu   = $total_pelunasan_un+$sisa_dana_un_old;
   $sisa_dana_un_saat_ini         = $pelunasan_un_dan_tahun_lalu-$total_dana_keluar_Un;
   
   $total_pembayaran_uas          = $total_pembayaran_uas['nominal'];
-  $total_dana_keluar_uas         = $total_dana_keluar_uas['uang_keluar'];
+  $total_dana_keluar_uas         = $total_dana_keluar_uas['uang_keluar']+total_hutang('UAS');
   $pembayaran_uas_dan_tahun_lalu = $total_pembayaran_uas+$sisa_dana_uas_old;
   $sisa_dana_uas_saat_ini        = $pembayaran_uas_dan_tahun_lalu-$total_dana_keluar_uas;
   

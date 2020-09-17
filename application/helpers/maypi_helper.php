@@ -1,5 +1,29 @@
 <?php
 
+function total_hutang($jenis_dana)
+{
+	$ci = get_instance();
+
+	$tahun_ajaran = $ci->M_pengaturan->tampil()->row_array()['tahun_ajaran'];
+
+	$ci->db->select_sum('nominal');
+
+	if( $jenis_dana == 'Infaq_Denda' ){
+		$query = $ci->db->get_where('hutang', ['tahun_ajaran' => $tahun_ajaran, 'jenis_dana' => $jenis_dana])->row_array();
+		return $query['nominal'];
+	}
+
+	if( $jenis_dana == 'UAS' ){
+		$query = $ci->db->get_where('hutang', ['tahun_ajaran' => $tahun_ajaran, 'jenis_dana' => $jenis_dana])->row_array();
+		return $query['nominal'];
+	}
+
+	if( $jenis_dana == 'UN' ){
+		$query = $ci->db->get_where('hutang', ['tahun_ajaran' => $tahun_ajaran, 'jenis_dana' => $jenis_dana])->row_array();
+		return $query['nominal'];
+	}
+}
+
 function active($param)
 {
 	$ci = get_instance();
@@ -46,32 +70,32 @@ function cekLogout()
 
 function bulan(){
 	$bulan = date ("F");
- 
+
 	switch($bulan){
 		case 'January':
 			$bulan_ini = "Januari";
 		break;
- 
-		case 'February':			
+
+		case 'February':
 			$bulan_ini = "Ferbuari";
 		break;
- 
+
 		case 'March':
 			$bulan_ini = "Maret";
 		break;
- 
+
 		case 'April':
 			$bulan_ini = "April";
 		break;
- 
+
 		case 'May':
 			$bulan_ini = "Mei";
 		break;
- 
+
 		case 'June':
 			$bulan_ini = "Juni";
 		break;
- 
+
 		case 'July':
 			$bulan_ini = "Juli";
 		break;
@@ -95,12 +119,12 @@ function bulan(){
 		case 'December':
 			$bulan_ini = "Desember";
 		break;
-		
+
 		default:
-			$bulan_ini = "Tidak di ketahui";		
+			$bulan_ini = "Tidak di ketahui";
 		break;
 	}
- 
+
 	return $bulan_ini;
- 
+
 }
