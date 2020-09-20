@@ -1,23 +1,25 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary float-left">Pelunasan UN</h6>
-    <a href="<?= base_url('pelunasan_un/tambah'); ?>" class="btn btn-primary btn-sm float-right">Tambah</a>
-    <a href="<?= base_url('pelunasan_un/cetak') ?>" class="btn btn-success btn-sm float-right mr-2">
+  </div>
+  <div class="card-body">
+    <a href="<?= base_url('pelunasan_un/tambah'); ?>" class="btn btn-primary btn-sm float-right ml-2 mb-2">Tambah</a>
+    <a href="<?= base_url('pelunasan_un/cetak') ?>" class="btn btn-success btn-sm float-right mb-2">
       <i class="fa fa-print"></i>
       Cetak Laporan
     </a>
-  </div>
-  <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="pelunasan_un" width="100%" cellspacing="0">
+      <table class="table table-bordered nowrap" id="pelunasan_un" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Menu</th>
             <th>No</th>
             <th>Nama</th>
+            <th>Kelas</th>
             <th>Tanggal</th>
             <th>Nominal</th>
             <th class="text-center">Status</th>
+            <th class="text-center" witdh="100">Diskon</th>
           </tr>
         </thead>
         <tbody>
@@ -34,30 +36,38 @@
             </td>
             <td width="10" class="text-center"><?= $no++; ?></td>
             <td><?= $pu['nama']; ?></td>
+            <td class="text-center"><?= $pu['kelas']; ?></td>
             <td><?= tgl($pu['tanggal']); ?></td>
             <td><?= "Rp.".number_format($pu['nominal'], 0, ',', '.'); ?></td>
             <td width="80" class="text-center">
               <?php 
-                if($pu['nominal'] >= 1500000 ){
-                  echo "<span class='badge badge-primary'>Lunas</span>";
-                } else if($pu['nominal'] < 1500000){
+                $tagihan = $ketentuan_pembayaran['un'] - $pu['diskon'];
 
-                  $kurang = $pu['nominal'] - 1500000;
+                if($pu['nominal'] == $tagihan ){
+                  echo "<span class='badge badge-primary'>Lunas</span>";
+                } else if($pu['nominal'] < $tagihan){
+
+                  $kurang = $pu['nominal'] - $tagihan;
 
                   echo "Rp.".number_format($kurang, 0, ',', '.');
 
+                } else if( $pu['nominal'] > $tagihan ){
+                  $lebih = $pu['nominal'] - $tagihan;
+
+                  echo "Rp.+".number_format($lebih, 0, ',', '.');
                 }
                ?>
              </td>
+             <td class="text-center"><?= $pu['diskon'] == 0 ? "-" : "Rp.".number_format($pu['diskon'], 0, ',', '.');  ?></td>
           </tr>
           <?php endforeach; ?>
         </tbody>
         <tfoot>
           <tr>
-            <th colspan="4">Total</th>
-            <th colspan="2">
+            <th colspan="5">Total</th>
+            <th colspan="3">
               <?php 
-                $total = $total[0]['nominal'];
+                $total = $total['nominal'];
                 echo "Rp.".number_format($total, 0, ',', '.');
               ?>
             </th>

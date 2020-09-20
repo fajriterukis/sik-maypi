@@ -9,14 +9,16 @@ class Pembayaran_uas extends CI_Controller {
 		cekLogin();
 		$this->load->model('M_pembayaran_uas');
 		$this->load->model('M_pengaturan');
+		$this->load->model('M_ketentuan_pembayaran');
 	}
 
 	public function index()
 	{
-		$data['title']            = 'Pembayaran UAS';
-		$tahun_ajaran             = $this->M_pengaturan->tampil()->row_array();
-		$data['pembayaran_uas'] = $this->M_pembayaran_uas->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
-		$data['total']            = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['title']                = 'Pembayaran UAS';
+		$tahun_ajaran                 = $this->M_pengaturan->tampil()->row_array();
+		$data['pembayaran_uas']       = $this->M_pembayaran_uas->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['total']                = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['ketentuan_pembayaran'] = $this->M_ketentuan_pembayaran->tampil($tahun_ajaran['tahun_ajaran'])->row_array();
 		$this->template->view('pembayaran_uas/index', $data);
 	}
 
@@ -34,7 +36,7 @@ class Pembayaran_uas extends CI_Controller {
 
 	public function edit($id)
 	{
-		$data['title']        = 'Edit Pembayaran UAS';
+		$data['title']          = 'Edit Pembayaran UAS';
 		$data['pembayaran_uas'] = $this->M_pembayaran_uas->tampil_perId($id)->row_array();
 		$this->template->view('pembayaran_uas/edit', $data);
 
@@ -53,10 +55,10 @@ class Pembayaran_uas extends CI_Controller {
 	public function cetak()
 	{
 		$data['title']                = 'Rekap Pelunasan Pembayaran UAS';
-		
 		$tahun_ajaran                 = $this->M_pengaturan->tampil()->row_array();
-		$data['pembayaran_uas']         = $this->M_pembayaran_uas->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['pembayaran_uas']       = $this->M_pembayaran_uas->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['total']                = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();
+		$data['ketentuan_pembayaran'] = $this->M_ketentuan_pembayaran->tampil($tahun_ajaran['tahun_ajaran'])->row_array();
 		$data['tahun_ajaran']         = $tahun_ajaran;
 		$this->template->view('pembayaran_uas/cetak', $data);
 

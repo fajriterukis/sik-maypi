@@ -5,6 +5,11 @@
     }
   }
 
+  @page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+
   div.body {
     font-family: arial;
     margin-left: 30px;
@@ -32,7 +37,7 @@
       <img src="<?= base_url('assets/img/logo.png'); ?>" width="120" class="mt-5">
     </div>
     <div class="col-md-10 header" style="padding-right: 120px;">
-      <h2 class="text-center">YAYASAN MIFTAHUL HUDA <br> MADRASAH ALIYAH MARTAPURA <br> "TERAKREDITASI"</h2>
+      <h2 class="text-center"><b>YAYASAN MIFTAHUL HUDA <br> MADRASAH ALIYAH MARTAPURA <br> "TERAKREDITASI"</b></h2>
       <p class="text-center" style="font-size: 16px;">
       Alamat : Kumpul Mulyo Desa Perjaya Barat Kec. Martapura Kab. OKU Timur <br>
       Provinsi Sumatera Selatan Kode POS 32181 Email : mamartapuraa@gmail.com</p>
@@ -51,22 +56,44 @@
       <th>Kelas</th>
       <th>Tanggal</th>
       <th>Nominal</th>
+      <th>Status</th>
+      <th>Diskon</th>
     </tr>
 
     <?php $no=1; ?>
-    <?php foreach( $pembayaran_uas as $ps ) : ?>
+    <?php foreach( $pembayaran_uas as $pu ) : ?>
     <tr>
       <td width="10" class="text-center"><?= $no++; ?></td>
-      <td><?= $ps['nama']; ?></td>
-      <td><?= $ps['kelas']; ?></td>
-      <td><?= tgl($ps['tanggal']); ?></td>
-      <td><?= "Rp.".number_format($ps['nominal'], 0, ',', '.'); ?></td>
+      <td><?= $pu['nama']; ?></td>
+      <td class="text-center"><?= $pu['kelas']; ?></td>
+      <td><?= tgl($pu['tanggal']); ?></td>
+      <td><?= "Rp.".number_format($pu['nominal'], 0, ',', '.'); ?></td>
+      <td width="80" class="text-center">
+        <?php 
+          $tagihan = $ketentuan_pembayaran['uas'] - $pu['diskon'];
+
+          if($pu['nominal'] == $tagihan ){
+            echo "<b>Lunas</b>";
+          } else if($pu['nominal'] < $tagihan){
+
+            $kurang = $pu['nominal'] - $tagihan;
+
+            echo "Rp.".number_format($kurang, 0, ',', '.');
+
+          } else if( $pu['nominal'] > $tagihan ){
+            $lebih = $pu['nominal'] - $tagihan;
+
+            echo "Rp.+".number_format($lebih, 0, ',', '.');
+          }
+         ?>
+      </td>
+      <td class="text-center"><?= $pu['diskon'] == 0 ? "-" : "Rp.".number_format($pu['diskon'], 0, ',', '.');  ?></td>
     </tr>
     <?php endforeach; ?>
 
     <tr>
       <th colspan="4">Total</th>
-      <th>
+      <th colspan="3">
         <?php 
           $total = ($total[0]['nominal']);
           echo "Rp.".number_format($total, 0, ',', '.');
@@ -74,12 +101,4 @@
       </th>
     </tr>
   </table>
-
-  <div class="row" style="margin-top: 30px;">
-    <div class="col-md-9"></div>
-    <div class="col-md-3 text-center">
-      <h6 class="mb-5 pb-3 font-weight-bold">Martapura, <?= date('d').' '.bulan().' '.date('Y'); ?> <br> Kepala Madrasah</h6>
-      <h6 class="font-weight-bold">Syamsul Arifin, S.Pd.I</h6>
-    </div>
-  </div>
 </div>

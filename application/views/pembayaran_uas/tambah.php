@@ -23,6 +23,10 @@
 				    <input type="number" class="form-control" name="nominal" required>		 
 				  </div>
 				  <div class="form-group">
+				    <label>Diskon (Rupiah)</label>
+				    <input type="number" class="form-control" name="diskon" value="0" required>		 
+				  </div>
+				  <div class="form-group">
 				    <input type="hidden" class="form-control" name="tahun_ajaran" value="<?= $tahun_ajaran['tahun_ajaran']; ?>" readonly required>		 
 				  </div>
 				  <button type="submit" name="tambah" class="btn btn-primary float-right">Tambah</button>

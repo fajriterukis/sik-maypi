@@ -5,6 +5,7 @@ class M_pelunasan_un extends CI_Model {
 
 	public function tampil($tahun_ajaran)
 	{
+		$this->db->order_by('nama', 'ASC');
 		$query = $this->db->get_where('pelunasan_un', ['tahun_ajaran' => $tahun_ajaran]);
 		return $query;
 	}
@@ -26,8 +27,10 @@ class M_pelunasan_un extends CI_Model {
 	{
 		$data = [
 			'nama'         => $this->input->post('nama'),
+			'kelas'        => $this->input->post('kelas'),
 			'tanggal'      => $this->input->post('tanggal'),
 			'nominal'      => $this->input->post('nominal'),
+			'diskon'       => $this->input->post('diskon'),
 			'tahun_ajaran' => $this->input->post('tahun_ajaran')
 		];
 
@@ -37,9 +40,11 @@ class M_pelunasan_un extends CI_Model {
 	public function edit($id)
 	{
 		$data = [
-			'nama'         => $this->input->post('nama'),
-			'tanggal'      => $this->input->post('tanggal'),
-			'nominal'      => $this->input->post('nominal'),
+			'nama'    => $this->input->post('nama'),
+			'kelas'   => $this->input->post('kelas'),
+			'tanggal' => $this->input->post('tanggal'),
+			'nominal' => $this->input->post('nominal'),
+			'diskon'  => $this->input->post('diskon')
 		];
 
 		$this->db->where('id', $id);

@@ -22,6 +22,10 @@
 				    <label>Nominal (Rupiah)</label>
 				    <input type="number" class="form-control" name="nominal" value="<?= $pembayaran_uas['nominal']; ?>" required>
 				  </div>
+				  <div class="form-group">
+				    <label>Diskon (Rupiah)</label>
+				    <input type="number" class="form-control" name="diskon" value="<?= $pembayaran_uas['diskon']; ?>" required>
+				  </div>
 				  <button type="submit" name="simpan" class="btn btn-primary float-right">Simpan</button>
 				</form>
 			</div>

@@ -11,12 +11,20 @@
 				    <input type="text" class="form-control" name="nama" value="<?= $pelunasan_un['nama']; ?>" required>		 
 				  </div>
 				  <div class="form-group">
+				    <label>Kelas</label>
+				    <input type="text" class="form-control" name="kelas" value="<?= $pelunasan_un['kelas']; ?>" required>		 
+				  </div>
+				  <div class="form-group">
 				    <label>Tanggal</label>
 				    <input type="date" class="form-control" name="tanggal" value="<?= $pelunasan_un['tanggal']; ?>" required>
 				  </div>
 				  <div class="form-group">
 				    <label>Nominal (Rupiah)</label>
 				    <input type="number" class="form-control" name="nominal" value="<?= $pelunasan_un['nominal']; ?>" required>
+				  </div>
+				  <div class="form-group">
+				    <label>Diskon (Rupiah)</label>
+				    <input type="number" class="form-control" name="diskon" value="<?= $pelunasan_un['diskon']; ?>" required>
 				  </div>
 				  <button type="submit" name="simpan" class="btn btn-primary float-right">Simpan</button>
 				</form>

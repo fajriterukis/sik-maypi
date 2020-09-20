@@ -5,6 +5,7 @@ class M_pembayaran_uas extends CI_Model {
 
 	public function tampil($tahun_ajaran)
 	{
+		$this->db->order_by('kelas ASC, nama ASC');
 		$query = $this->db->get_where('pembayaran_uas', ['tahun_ajaran' => $tahun_ajaran]);
 		return $query;
 	}
@@ -29,6 +30,7 @@ class M_pembayaran_uas extends CI_Model {
 			'kelas'        => $this->input->post('kelas'),
 			'tanggal'      => $this->input->post('tanggal'),
 			'nominal'      => $this->input->post('nominal'),
+			'diskon'       => $this->input->post('diskon'),
 			'tahun_ajaran' => $this->input->post('tahun_ajaran')
 		];
 
@@ -38,10 +40,11 @@ class M_pembayaran_uas extends CI_Model {
 	public function edit($id)
 	{
 		$data = [
-			'nama'         => $this->input->post('nama'),
-			'kelas'        => $this->input->post('kelas'),
-			'tanggal'      => $this->input->post('tanggal'),
-			'nominal'      => $this->input->post('nominal')
+			'nama'    => $this->input->post('nama'),
+			'kelas'   => $this->input->post('kelas'),
+			'tanggal' => $this->input->post('tanggal'),
+			'nominal' => $this->input->post('nominal'),
+			'diskon'  => $this->input->post('diskon')
 		];
 
 		$this->db->where('id', $id);

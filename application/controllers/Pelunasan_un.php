@@ -8,8 +8,8 @@ class Pelunasan_un extends CI_Controller {
 		parent::__construct();
 		cekLogin();
 		$this->load->model('M_pelunasan_un');
-		$this->load->model('M_dana_keluar_un');
 		$this->load->model('M_pengaturan');
+		$this->load->model('M_ketentuan_pembayaran');
 	}
 
 	public function index()
@@ -17,8 +17,8 @@ class Pelunasan_un extends CI_Controller {
 		$data['title']                = 'Pelunasan UN';
 		$tahun_ajaran                 = $this->M_pengaturan->tampil()->row_array();
 		$data['pelunasan_un']         = $this->M_pelunasan_un->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
-		$data['total']                = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->result_array();
-		$data['total_dana_keluar_un'] = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->row_array();
+		$data['total']                = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->row_array();
+		$data['ketentuan_pembayaran'] = $this->M_ketentuan_pembayaran->tampil($tahun_ajaran['tahun_ajaran'])->row_array();
 		$this->template->view('pelunasan_un/index', $data);
 	}
 
@@ -59,7 +59,7 @@ class Pelunasan_un extends CI_Controller {
 		$tahun_ajaran                 = $this->M_pengaturan->tampil()->row_array();
 		$data['pelunasan_un']         = $this->M_pelunasan_un->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['total']                = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->result_array();
-		$data['total_dana_keluar_un'] = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->row_array();
+		$data['ketentuan_pembayaran'] = $this->M_ketentuan_pembayaran->tampil($tahun_ajaran['tahun_ajaran'])->row_array();
 		$data['tahun_ajaran']         = $tahun_ajaran;
 		$this->template->view('pelunasan_un/cetak', $data);
 

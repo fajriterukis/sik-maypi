@@ -15,6 +15,7 @@ class Home extends CI_Controller {
 		$this->load->model('M_pembayaran_uas');
 		$this->load->model('M_dana_keluar_uas');
 		$this->load->model('M_pengaturan');
+		$this->load->model('M_ketentuan_pembayaran');
 	}
 
 	public function index()
@@ -36,7 +37,6 @@ class Home extends CI_Controller {
 		
 		$data['total_pembayaran_uas']  = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->row_array();
 		$data['total_dana_keluar_uas'] = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->row_array();
-
 		
 		$data['tahun_ajaran']          = $tahun_ajaran;
 		$this->template->view('home', $data);
@@ -79,20 +79,19 @@ class Home extends CI_Controller {
 		$b = $tahun_lalu['1']-1;
 		$tahun_lalu = $a."/".$b;
 		
-		$sisa_dana  = $this->M_sisa_dana->tampilPerTahun($tahun_lalu)->row_array();
-
+		$sisa_dana             = $this->M_sisa_dana->tampilPerTahun($tahun_lalu)->row_array();
+		
 		$total_dana_masuk      = $this->M_dana_masuk->total($tahun_ajaran['tahun_ajaran'])->row_array()['nominal'];
 		$total_dana_keluar     = $this->M_dana_keluar->total($tahun_ajaran['tahun_ajaran'])->row_array()['uang_keluar'];
 		
 		$total_pelunasan_un    = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->row_array()['nominal'];
-		$sisa_dana_un_old  = $this->M_sisa_dana->tampilPerTahun($tahun_lalu)->row_array();
-		$total_dana_keluar_Un  = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->row_array()['uang_keluar'];
+		$total_dana_keluar_un  = $this->M_dana_keluar_un->total($tahun_ajaran['tahun_ajaran'])->row_array()['uang_keluar'];
 		
 		$total_pembayaran_uas  = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->row_array()['nominal'];
 		$total_dana_keluar_uas = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->row_array()['uang_keluar'];
 		
 		$sisa_denda_infaq      = ($total_dana_masuk+$sisa_dana['denda_infaq'])-($total_dana_keluar+total_hutang('Infaq_Denda'));
-		$sisa_dana_un          = ($total_pelunasan_un+$sisa_dana['un'])-($total_dana_keluar_Un+total_hutang('UN'));
+		$sisa_dana_un          = ($total_pelunasan_un+$sisa_dana['un'])-($total_dana_keluar_un+total_hutang('UN'));
 		$sisa_dana_uas         = ($total_pembayaran_uas+$sisa_dana['uas'])-($total_dana_keluar_uas+total_hutang('UAS'));
 
 		$query = $this->db->get_where('sisa_dana', ['tahun_ajaran' => $tahun_ajaran['tahun_ajaran']])->num_rows();
@@ -115,6 +114,13 @@ class Home extends CI_Controller {
 			];
 
 			$this->db->insert('sisa_dana', $data);
+
+			$tahun_depan = explode('/', $tahun_ajaran['tahun_ajaran']);
+			$a = $tahun_depan['0']+1;
+			$b = $tahun_depan['1']+1;
+			$tahun_depan = $a."/".$b;
+
+			$this->M_ketentuan_pembayaran->tambah($tahun_depan);
 		}
 
 		redirect('sisa_dana');
