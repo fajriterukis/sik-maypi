@@ -5,6 +5,11 @@
     }
   }
 
+  @page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+
   div.body {
     font-family: arial;
     margin-left: 30px;
@@ -32,7 +37,7 @@
       <img src="<?= base_url('assets/img/logo.png'); ?>" width="120" class="mt-5">
     </div>
     <div class="col-md-10 header" style="padding-right: 120px;">
-      <h2 class="text-center">YAYASAN MIFTAHUL HUDA <br> MADRASAH ALIYAH MARTAPURA <br> "TERAKREDITASI"</h2>
+      <h2 class="text-center"><b>YAYASAN MIFTAHUL HUDA <br> MADRASAH ALIYAH MARTAPURA <br> "TERAKREDITASI"</b></h2>
       <p class="text-center" style="font-size: 16px;">
       Alamat : Kumpul Mulyo Desa Perjaya Barat Kec. Martapura Kab. OKU Timur <br>
       Provinsi Sumatera Selatan Kode POS 32181 Email : mamartapuraa@gmail.com</p>
@@ -90,12 +95,4 @@
       </th>
     </tr>
   </table>
-
-  <div class="row" style="margin-top: 30px;">
-    <div class="col-md-9"></div>
-    <div class="col-md-3 text-center">
-      <h6 class="mb-5 pb-3 font-weight-bold">Martapura, <?= date('d').' '.bulan().' '.date('Y'); ?> <br> Kepala Madrasah</h6>
-      <h6 class="font-weight-bold">Syamsul Arifin, S.Pd.I</h6>
-    </div>
-  </div>
 </div>
