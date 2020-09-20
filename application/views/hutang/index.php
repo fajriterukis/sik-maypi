@@ -1,11 +1,11 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary float-left">Data Hutang</h6>
-    <a href="<?= base_url('hutang/tambah'); ?>" class="btn btn-primary btn-sm float-right">Tambah</a>
   </div>
   <div class="card-body">
+    <a href="<?= base_url('hutang/tambah'); ?>" class="btn btn-primary btn-sm float-right mb-2">Tambah</a>
     <div class="table-responsive">
-      <table class="table table-bordered" id="hutang" width="100%" cellspacing="0">
+      <table class="table table-bordered nowrap" id="hutang" width="100%" cellspacing="0">
         <thead>
           <tr>
             <th>Menu</th>

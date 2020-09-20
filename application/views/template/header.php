@@ -8,98 +8,123 @@
       <meta name="robots" content="noindex">
       <meta name="googlebot" content="noindex">
       <title>SIK-MAYPI <?= @$title == '' ? '' : ' - '.$title; ?></title>
-      <!-- Custom fonts for this template-->
       <link href="<?= base_url('assets/') ?>fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <link href="<?= base_url('assets/') ?>css/sb-admin-2.min.css" rel="stylesheet">
       <link rel="stylesheet" href="<?= base_url('assets/') ?>datatables/datatables.min.css">
       <link rel="shortcut icon" href="<?= base_url('assets/img/logo.png'); ?>">
       <script src="<?= base_url('assets/') ?>jquery/jquery.min.js"></script>
       <style>
-      body, table, h1, h2, h3, h4, h5, h6 {
-      color: black!important;
-      }
+        body, table, h1, h2, h3, h4, h5, h6 {
+          color: black!important;
+        }
       </style>
    </head>
    <body id="page-top">
       <!-- Page Wrapper -->
       <div id="wrapper">
+
          <!-- Sidebar -->
          <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="<?= base_url(); ?>">
                <div class="sidebar-brand-icon">
                </div>
                <div class="sidebar-brand-text mx-3">SIK-MAYPI</div>
             </a>
-            <!-- Divider -->
+            
             <hr class="sidebar-divider my-0">
-            <!-- Nav Item - Dashboard -->
+            
             <li class="nav-item <?php active(''); ?>">
                <a class="nav-link" href="<?= base_url(); ?>">
                   <i class="fas fa-fw fa-home"></i>
                   <span>Beranda</span>
                </a>
             </li>
-            <!-- Divider -->
+
             <hr class="sidebar-divider">
-            <!-- Heading -->
-            <div class="sidebar-heading">
-               Keuangan
-            </div>
-            <li class="nav-item <?= active('dana_masuk'); ?>">
-               <a class="nav-link" href="<?= base_url('dana_masuk'); ?>">
+
+            <!-- Menu Keuangan -->
+            <div class="keuangan">
+              <div class="sidebar-heading">
+                 Keuangan
+              </div>
+
+              <li class="nav-item <?= active('dana_masuk') || active('dana_keluar') ?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#denda_infaq" aria-expanded="true" aria-controls="denda_infaq">
                   <i class="fas fa-fw fa-download"></i>
-                  <span>Dana Masuk Infaq & Denda</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('dana_keluar'); ?>">
-               <a class="nav-link" href="<?= base_url('dana_keluar'); ?>">
-                  <i class="fas fa-fw fa-upload"></i>
-                  <span>Dana Keluar Infaq & Denda</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('pelunasan_un'); ?>">
-               <a class="nav-link" href="<?= base_url('pelunasan_un'); ?>">
+                  <span>Denda & Infaq</span>
+                </a>
+                <div id="denda_infaq" class="collapse <?= show('dana_masuk') || show('dana_keluar') ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item <?= active('dana_masuk') ?>" href="<?= base_url('dana_masuk') ?>">Dana Masuk</a>
+                    <a class="collapse-item <?= active('dana_keluar') ?>" href="<?= base_url('dana_keluar') ?>">Dana Keluar</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item <?= active('pembayaran_uas') || active('dana_keluar_uas') ?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#uas" aria-expanded="true" aria-controls="uas">
+                  <i class="fas fa-fw fa-users"></i>
+                  <span>UAS</span>
+                </a>
+                <div id="uas" class="collapse <?= show('pembayaran_uas') || show('dana_keluar_uas') ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item <?= active('pembayaran_uas') ?>" href="<?= base_url('pembayaran_uas') ?>">Pembayaran UAS</a>
+                    <a class="collapse-item <?= active('dana_keluar_uas') ?>" href="<?= base_url('dana_keluar_uas') ?>">Dana Keluar UAS</a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="nav-item <?= active('pelunasan_un') || active('dana_keluar_un') ?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#un" aria-expanded="true" aria-controls="un">
                   <i class="fas fa-fw fa-file-signature"></i>
-                  <span>Pelunasan UN</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('dana_keluar_un'); ?>">
-               <a class="nav-link" href="<?= base_url('dana_keluar_un'); ?>">
-                  <i class="fas fa-fw fa-file-upload"></i>
-                  <span>Dana Keluar UN</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('pembayaran_uas'); ?>">
-               <a class="nav-link" href="<?= base_url('pembayaran_uas'); ?>">
-                  <i class="fas fa-fw fa-users"></i>
-                  <span>Pembayaran UAS</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('dana_keluar_uas'); ?>">
-               <a class="nav-link" href="<?= base_url('dana_keluar_uas'); ?>">
-                  <i class="fas fa-fw fa-file-upload"></i>
-                  <span>Dana Keluar UAS</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('hutang'); ?>">
-               <a class="nav-link" href="<?= base_url('hutang'); ?>">
-                  <i class="fas fa-fw fa-users"></i>
-                  <span>Data Hutang</span>
-               </a>
-            </li>
-            <li class="nav-item <?= active('sisa_dana'); ?>">
-               <a class="nav-link" href="<?= base_url('sisa_dana'); ?>">
-                  <i class="fas fa-fw fa-calendar-alt"></i>
-                  <span>Sisa Dana Tahun Lalu</span>
-               </a>
-            </li>
-            <li class="nav-item <?php active('pengaturan'); ?>">
-               <a class="nav-link" href="<?= base_url('pengaturan'); ?>">
+                  <span>UN</span>
+                </a>
+                <div id="un" class="collapse <?= show('pelunasan_un') || show('dana_keluar_un') ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item <?= active('pelunasan_un') ?>" href="<?= base_url('pelunasan_un') ?>">Pelunasan UN</a>
+                    <a class="collapse-item <?= active('dana_keluar_un') ?>" href="<?= base_url('dana_keluar_un') ?>">Dana Keluar UN</a>
+                  </div>
+                </div>
+              </li>
+             
+              <li class="nav-item <?= active('hutang'); ?>">
+                 <a class="nav-link" href="<?= base_url('hutang'); ?>">
+                    <i class="fas fa-fw fa-user"></i>
+                    <span>Data Hutang</span>
+                 </a>
+              </li>
+              <li class="nav-item <?= active('sisa_dana'); ?>">
+                 <a class="nav-link" href="<?= base_url('sisa_dana'); ?>">
+                    <i class="fas fa-fw fa-calendar-alt"></i>
+                    <span>Daftar Sisa Dana</span>
+                 </a>
+              </li>
+            </div>
+            <!-- Akhir Menu Keuangan -->
+
+            <hr class="sidebar-divider">
+
+            <!-- Menu Pengaturan -->
+            <div class="pengaturan">
+              <div class="sidebar-heading">
+                 Pengaturan
+              </div>
+
+              <li class="nav-item <?= active('pengaturan') || active('ketentuan_pembayaran') ?>">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan" aria-expanded="true" aria-controls="pengaturan">
                   <i class="fas fa-fw fa-cog"></i>
-                  <span>Pengaturan Tahun Ajaran</span>
-               </a>
-            </li>
+                  <span>Pengaturan</span>
+                </a>
+                <div id="pengaturan" class="collapse  <?= show('pengaturan') || show('ketentuan_pembayaran') ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                  <div class="bg-white py-2 collapse-inner rounded">
+                    <a class="collapse-item <?= active('pengaturan') ?>" href="<?= base_url('pengaturan') ?>">Tahun Ajaran</a>
+                    <a class="collapse-item <?= active('ketentuan_pembayaran') ?>" href="<?= base_url('ketentuan_pembayaran') ?>">Ketentuan Pembayaran</a>
+                  </div>
+                </div>
+              </li>
+            </div>
+            <!-- Akhir Menu Pengaturan -->
+
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
             <!-- Sidebar Toggler (Sidebar) -->
@@ -108,6 +133,7 @@
             </div>
          </ul>
          <!-- End of Sidebar -->
+
          <!-- Content Wrapper -->
          <div id="content-wrapper" class="d-flex flex-column">
             <!-- Main Content -->
@@ -116,30 +142,11 @@
                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
                   <!-- Sidebar Toggle (Topbar) -->
                   <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                  <i class="fa fa-bars"></i>
+                    <i class="fa fa-bars"></i>
                   </button>
+                  
                   <!-- Topbar Navbar -->
                   <ul class="navbar-nav ml-auto">
-                     <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                     <li class="nav-item dropdown no-arrow d-sm-none">
-                        <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           <i class="fas fa-search fa-fw"></i>
-                        </a>
-                        <!-- Dropdown - Messages -->
-                        <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
-                           <form class="form-inline mr-auto w-100 navbar-search">
-                              <div class="input-group">
-                                 <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
-                                 <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                    <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                 </div>
-                              </div>
-                           </form>
-                        </div>
-                     </li>
-                     <div class="topbar-divider d-none d-sm-block"></div>
                      <!-- Nav Item - User Information -->
                      <li class="nav-item dropdown no-arrow">
                         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -162,5 +169,6 @@
                   </ul>
                </nav>
                <!-- End of Topbar -->
+
                <!-- Begin Page Content -->
                <div class="container-fluid">

@@ -1,15 +1,15 @@
 <div class="card shadow mb-4">
   <div class="card-header py-3">
     <h6 class="m-0 font-weight-bold text-primary float-left">Dana Masuk</h6>
-    <a href="<?= base_url('dana_masuk/tambah'); ?>" class="btn btn-primary btn-sm float-right">Tambah</a>
-    <a href="<?= base_url('dana_masuk/cetak') ?>" class="btn btn-success btn-sm float-right mr-2">
+  </div>
+  <div class="card-body">
+    <a href="<?= base_url('dana_masuk/tambah'); ?>" class="btn btn-primary btn-sm float-right ml-2 mb-2">Tambah</a>
+    <a href="<?= base_url('dana_masuk/cetak') ?>" class="btn btn-success btn-sm float-right mb-2">
       <i class="fa fa-print"></i>
       Cetak Laporan
     </a>
-  </div>
-  <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="dana_masuk" width="100%">
+      <table class="table table-bordered nowrap" id="dana_masuk" width="100%">
         <thead>
           <tr>
             <th>Menu</th>

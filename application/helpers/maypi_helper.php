@@ -33,6 +33,15 @@ function active($param)
 	}
 }
 
+function show($param)
+{
+	$ci = get_instance();
+
+	if( $ci->uri->segment(1) == $param ){
+		echo "show";
+	}	
+}
+
 function tgl($tanggal)
 {
 	$tanggal = date('d-m-Y', strtotime($tanggal));

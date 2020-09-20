@@ -1,22 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title><?= $title; ?></title>
 
-  <!-- Custom fonts for this template-->
   <link href="<?= base_url(); ?>assets/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-
-  <!-- Custom styles for this template-->
   <link href="<?= base_url(); ?>assets/css/sb-admin-2.min.css" rel="stylesheet">
-
   <link rel="shortcut icon" href="<?= base_url('assets/img/logo.png'); ?>">
-
   <style>
     body {
       background-image: url(../assets/img/bg-login.jpg);
@@ -43,9 +36,7 @@
       color: yellow;
     }
   </style>
-
 </head>
-
 <body>
 
   <div class="container mt-5 pt-5">
@@ -63,9 +54,8 @@
                 <div class="p-5">
                   <div class="text-center">
                     <img src="<?= base_url('assets/img/logo.png'); ?>" width="80">
-                    <h5 class="mb-3 mt-3 si-title">SISTEM INFORMASI KEUANGAN MAYPI MARTAPURA</h5>
+                    <h5 class="mb-3 mt-3 si-title">SISTEM INFORMASI KEUANGAN <br> MA YPI MARTAPURA</h5>
                   </div>
-
                   
                   <?= $this->session->flashdata('message'); ?>
 
@@ -90,16 +80,9 @@
 
   </div>
 
-  <!-- Bootstrap core JavaScript-->
   <script src="<?= base_url() ?>assets/jquery/jquery.min.js"></script>
   <script src="<?= base_url() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Core plugin JavaScript-->
   <script src="<?= base_url() ?>assets/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for all pages-->
   <script src="<?= base_url() ?>assets/js/sb-admin-2.min.js"></script>
-
 </body>
-
 </html>

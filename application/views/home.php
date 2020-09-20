@@ -25,13 +25,13 @@
   <div class="col-md-12">
     <h3 class="mb-3">Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
 
-    <a href="<?= base_url('home/cetak'); ?>" class="btn btn-success float-right ml-2">
+    <a href="<?= base_url('home/cetak'); ?>" class="btn btn-success float-right ml-2 mb-2">
       <i class="fa fa-print"></i>
       Cetak Laporan
     </a>
     <a href="<?= base_url('home/simpan'); ?>" class="btn btn-primary float-right">
       <i class="fa fa-file-download"></i>
-      Simpan ke Sisa Dana Tahun Lalu
+      Simpan ke Sisa Dana
     </a>
   </div>
 </div>

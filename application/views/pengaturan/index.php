@@ -6,7 +6,7 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-          <table class="table table-bordered">
+          <table class="table table-bordered nowrap">
             <thead>
               <tr>
                 <th>Menu</th>
@@ -16,12 +16,12 @@
             <tbody>
               <?php foreach( $pengaturan as $p ) : ?>
               <tr>
-                <td><?= $p['tahun_ajaran']; ?></td>
-                <td class="text-center" width="200">
+                <td class="text-center" width="100">
                   <a href="<?= base_url('pengaturan/edit/'.$p['id']); ?>" class="btn btn-success btn-sm">
                     <i class="fa fa-edit"></i>
                   </a>
                 </td> 
+                <td><?= $p['tahun_ajaran']; ?></td>
               </tr>
               <?php endforeach; ?>
             </tbody>
