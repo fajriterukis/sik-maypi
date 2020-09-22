@@ -86,6 +86,23 @@
       $('#hutang').DataTable({
         stateSave: true
       });
+
+      var url     = $(location).attr('href');
+      var pisah   = url.split('/');
+      var segment = pisah[4];
+
+      if( segment == 'dana_masuk' || segment == 'dana_keluar' ){
+        $('.denda_infaq').removeClass('collapsed');
+      }
+      if( segment == 'pembayaran_uas' || segment == 'dana_keluar_uas' ){
+        $('.uas').removeClass('collapsed');
+      }
+      if( segment == 'pelunasan_un' || segment == 'dana_keluar_un' ){
+        $('.un').removeClass('collapsed');
+      }
+      if( segment == 'pengaturan' || segment == 'ketentuan_pembayaran' ){
+        $('.pengaturan').removeClass('collapsed');
+      }
     });
   </script>
 

@@ -49,7 +49,7 @@
               </div>
 
               <li class="nav-item <?= active('dana_masuk') || active('dana_keluar') ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#denda_infaq" aria-expanded="true" aria-controls="denda_infaq">
+                <a class="nav-link collapsed denda_infaq" href="#" data-toggle="collapse" data-target="#denda_infaq" aria-expanded="true" aria-controls="denda_infaq">
                   <i class="fas fa-fw fa-download"></i>
                   <span>Denda & Infaq</span>
                 </a>
@@ -62,7 +62,7 @@
               </li>
 
               <li class="nav-item <?= active('pembayaran_uas') || active('dana_keluar_uas') ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#uas" aria-expanded="true" aria-controls="uas">
+                <a class="nav-link collapsed uas" href="#" data-toggle="collapse" data-target="#uas" aria-expanded="true" aria-controls="uas">
                   <i class="fas fa-fw fa-users"></i>
                   <span>UAS</span>
                 </a>
@@ -75,7 +75,7 @@
               </li>
 
               <li class="nav-item <?= active('pelunasan_un') || active('dana_keluar_un') ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#un" aria-expanded="true" aria-controls="un">
+                <a class="nav-link collapsed un" href="#" data-toggle="collapse" data-target="#un" aria-expanded="true" aria-controls="un">
                   <i class="fas fa-fw fa-file-signature"></i>
                   <span>UN</span>
                 </a>
@@ -111,7 +111,7 @@
               </div>
 
               <li class="nav-item <?= active('pengaturan') || active('ketentuan_pembayaran') ?>">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pengaturan" aria-expanded="true" aria-controls="pengaturan">
+                <a class="nav-link collapsed pengaturan" href="#" data-toggle="collapse" data-target="#pengaturan" aria-expanded="true" aria-controls="pengaturan">
                   <i class="fas fa-fw fa-cog"></i>
                   <span>Pengaturan</span>
                 </a>
