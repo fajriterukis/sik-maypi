@@ -35,6 +35,11 @@
     button.btn-user:hover {
       color: yellow;
     }
+
+    @media only screen and (max-width: 400px) {
+      h5.si-title {
+        font-size: 14px;
+    }
   </style>
 </head>
 <body>
