@@ -53,6 +53,15 @@ class M_pembayaran_uas extends CI_Model {
 
 	public function hapus($id)
 	{
-		$this->db->delete('pembayaran_uas', ['id' => $id]);
+		$this->db->where_in('id', $id);
+		$this->db->delete('pembayaran_uas');
 	}
+
+	public function import_data($datasiswa)
+    {
+        $jumlah = count($datasiswa);
+        if ($jumlah > 0) {
+            $this->db->replace('pembayaran_uas', $datasiswa);
+        }
+    }
 }

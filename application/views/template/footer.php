@@ -68,7 +68,11 @@
       });
 
       $('#pembayaran_uas').DataTable({
-        stateSave: true
+        stateSave: true,
+        "columnDefs": [{
+          "targets": 0,
+          "orderable": false,
+          }]
       });
 
       $('#dana_keluar_uas').DataTable({
@@ -103,6 +107,20 @@
       if( segment == 'pengaturan' || segment == 'ketentuan_pembayaran' ){
         $('.pengaturan').removeClass('collapsed');
       }
+
+      $("#check-all").click(function(){ // Ketika user men-cek checkbox all
+        if($(this).is(":checked")) // Jika checkbox all diceklis
+          $(".check-item").prop("checked", true); // ceklis semua checkbox siswa dengan class "check-item"
+        else // Jika checkbox all tidak diceklis
+          $(".check-item").prop("checked", false); // un-ceklis semua checkbox siswa dengan class "check-item"
+      });
+      
+      $("#btn-delete").click(function(){ // Ketika user mengklik tombol delete
+        var confirm = window.confirm("Apakah Anda yakin ingin menghapus data-data ini?"); // Buat sebuah alert konfirmasi
+        
+        if(confirm) // Jika user mengklik tombol "Ok"
+          $("#form-delete").submit(); // Submit form
+      });
     });
   </script>
 
