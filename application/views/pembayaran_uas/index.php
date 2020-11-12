@@ -10,12 +10,13 @@
       <i class="fa fa-print"></i>
       Cetak Laporan
     </a>
+    <form method="POST" action="pembayaran_uas/hapus" id="form-delete">
     <div class="table-responsive">
-      <form method="POST" action="pembayaran_uas/hapus" id="form-delete">
         <table class="table table-bordered nowrap" id="pembayaran_uas" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th class="text-center"><input type="checkbox" id="check-all"></th>
+              <th>Menu</th>
               <th>No</th>
               <th>Nama</th>
               <th>Kelas</th>
@@ -29,12 +30,17 @@
             <?php $no=1; ?>
             <?php foreach( $pembayaran_uas as $pu ) : ?>
             <tr>
-              <td class="text-center" width="100">
+              <td class="text-center" width="10">
                 <input type="checkbox" class="check-item" name="id[]" value="<?= $pu['id']; ?>">
+              </td>
+              <td class="text-center" width="10">
+                <a href="<?= base_url('pembayaran_uas/edit/'.$pu['id']); ?>" class="btn btn-success btn-sm">
+                  <i class="fa fa-edit"></i>
+                </a>
               </td>
               <td width="10" class="text-center"><?= $no++; ?></td>
               <td><?= $pu['nama']; ?></td>
-              <td class="text-center"><?= $pu['kelas']; ?></td>
+              <td class="text-center" width="10"><?= $pu['kelas']; ?></td>
               <td><?= tgl($pu['tanggal']); ?></td>
               <td><?= "Rp.".number_format($pu['nominal'], 0, ',', '.'); ?></td>
               <td width="80" class="text-center">
@@ -62,7 +68,7 @@
           </tbody>
           <tfoot>
             <tr>
-              <th colspan="5">Total</th>
+              <th colspan="6">Total</th>
               <th colspan="3">
                 <?php 
                   $total = ($total[0]['nominal']);
@@ -72,7 +78,7 @@
             </tr>
           </tfoot>
         </table>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 </div>
