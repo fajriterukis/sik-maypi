@@ -88,13 +88,17 @@ class Pembayaran_uas extends CI_Controller {
 
 	public function upload()
 	{
+		$old_file = scandir('import/uas/')[2];
+		unlink('import/uas/' . $old_file);
+
 		$config['upload_path'] = './import/uas/';
         $config['allowed_types'] = 'xlsx|xls';
-        $config['file_name'] = 'doc' . time();
+        $config['file_name'] = 'pembayaran_uas';
         $this->load->library('upload', $config);
         if ( $this->upload->do_upload('importexcel') ) {
             $file = $this->upload->data();
             $reader = ReaderEntityFactory::createXLSXReader();
+            $reader->setShouldFormatDates(true);
 
             $reader->open('import/uas/' . $file['file_name']);
             foreach ($reader->getSheetIterator() as $sheet) {
@@ -102,19 +106,18 @@ class Pembayaran_uas extends CI_Controller {
                 foreach ($sheet->getRowIterator() as $row) {
                     if ($numRow > 1) {
                         $datasiswa = array(
-							'nama'         => $row->getCellAtIndex(0),
-							'kelas'        => $row->getCellAtIndex(1),
-							'tanggal'      => $row->getCellAtIndex(2),
-							'nominal'      => $row->getCellAtIndex(3),
-							'diskon'       => $row->getCellAtIndex(4),
-							'tahun_ajaran' => $row->getCellAtIndex(5)
+							'nama'         => $row->getCellAtIndex(0)->getValue(),
+							'kelas'        => $row->getCellAtIndex(1)->getValue(),
+							'tanggal'      => tglExcel($row->getCellAtIndex(2)->getValue()),
+							'nominal'      => $row->getCellAtIndex(3)->getValue(),
+							'diskon'       => $row->getCellAtIndex(4)->getValue(),
+							'tahun_ajaran' => $row->getCellAtIndex(5)->getValue()
                         );
                         $this->M_pembayaran_uas->import_data($datasiswa);
                     }
                     $numRow++;
                 }
                 $reader->close();
-                unlink('import/uas/' . $file['file_name']);
                 redirect('pembayaran_uas');
             }
         } else {

@@ -48,6 +48,12 @@ function tgl($tanggal)
 	return $tanggal;
 }
 
+function tglExcel($tanggal)
+{
+	$tanggal = date('Y-m-d', strtotime($tanggal));
+	return $tanggal;
+}
+
 function cekLogin()
 {
 	$ci = get_instance();

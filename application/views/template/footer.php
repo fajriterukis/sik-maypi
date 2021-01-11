@@ -80,7 +80,11 @@
       });
       
       $('#pelunasan_un').DataTable({
-        stateSave: true
+        stateSave: true,
+        "columnDefs": [{
+          "targets": 0,
+          "orderable": false,
+        }]
       });
 
       $('#dana_keluar_un').DataTable({

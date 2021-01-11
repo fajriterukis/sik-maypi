@@ -53,6 +53,15 @@ class M_pelunasan_un extends CI_Model {
 
 	public function hapus($id)
 	{
-		$this->db->delete('pelunasan_un', ['id' => $id]);
+		$this->db->where_in('id', $id);
+		$this->db->delete('pelunasan_un');
 	}
+
+	public function import_data($datasiswa)
+    {
+        $jumlah = count($datasiswa);
+        if ($jumlah > 0) {
+            $this->db->replace('pelunasan_un', $datasiswa);        
+        }
+    }
 }
