@@ -51,7 +51,7 @@
               <li class="nav-item <?= active('dana_masuk') || active('dana_keluar') ?>">
                 <a class="nav-link collapsed denda_infaq" href="#" data-toggle="collapse" data-target="#denda_infaq" aria-expanded="true" aria-controls="denda_infaq">
                   <i class="fas fa-fw fa-download"></i>
-                  <span>Denda & Infaq</span>
+                  <span>Infaq & Denda</span>
                 </a>
                 <div id="denda_infaq" class="collapse <?= show('dana_masuk') || show('dana_keluar') ?>" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                   <div class="bg-white py-2 collapse-inner rounded">
