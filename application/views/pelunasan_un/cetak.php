@@ -1,44 +1,12 @@
-<style>
-  @media print{
-    #accordionSidebar, #tombol-cetak, footer {
-      display: none;
-    }
-  }
-
-  @page {
-    margin-top: 2cm;
-    margin-bottom: 2cm;
-  }
-
-  div.body {
-    font-family: arial;
-    margin-left: 30px;
-    color: black;
-  }
-
-  hr.hr-1 {
-    border-color: black;
-    border-width: 5px;
-    margin: 0;
-    padding: 0;
-  }
-
-  hr.hr-2 {
-    border-color: black;
-    margin: 0;
-    padding: 0;
-    margin-top: 2px;
-  }
-</style>
-
-<div class="body">
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-2 text-center">
-      <img src="<?= base_url('assets/img/logo.png'); ?>" width="120" class="mt-5">
+    <div class="col-sm-2 text-center">
+      <img src="<?= base_url('assets/img/logo.png'); ?>" width="120" class="mt-4">
     </div>
-    <div class="col-md-10 header" style="padding-right: 120px;">
-      <h2 class="text-center"><b>YAYASAN MIFTAHUL HUDA <br> MADRASAH ALIYAH MARTAPURA <br> "TERAKREDITASI"</b></h2>
-      <p class="text-center" style="font-size: 16px;">
+    <div class="col" style="padding-right: 120px;">
+      <h2 class="text-center"><b>YAYASAN MIFTAHUL HUDA <br> MADRASAH ALIYAH MARTAPURA <br> </b></h2>
+      <h4 class="text-center"><b>"TERAKREDITASI"</b></h4>
+      <p class="text-center" style="font-size: 14px;">
       Alamat : Kumpul Mulyo Desa Perjaya Barat Kec. Martapura Kab. OKU Timur <br>
       Provinsi Sumatera Selatan Kode POS 32181 Email : mamartapuraa@gmail.com</p>
     </div>
@@ -47,7 +15,7 @@
   <hr class="hr-1">
   <hr class="hr-2">
 
-  <h3 class="text-center mb-4 mt-4">Rekapitulasi Pelunasan UN Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
+  <h3 class="text-center mb-4 mt-4">Rekapitulasi Pelunasan UN <br> Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
 
   <table class="table table-bordered">
     <tr>

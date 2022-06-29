@@ -125,6 +125,84 @@
         if(confirm) // Jika user mengklik tombol "Ok"
           $("#form-delete").submit(); // Submit form
       });
+
+      // Cetak
+      $("#cetakHome").click(function(){
+        loadCetakHome();
+      });
+
+      $("#cetakDanaMasuk").click(function(){
+        loadCetakDanaMasuk();
+      });
+
+      $("#cetakDanaKeluar").click(function(){
+        loadCetakDanaKeluar();
+      });
+
+      $("#cetakPembayaranUas").click(function(){
+        loadCetakPembayaranUas();
+      });
+
+      $("#cetakDanaKeluarUas").click(function(){
+        loadCetakDanaKeluarUas();
+      });
+
+      $("#cetakPelunasanUn").click(function(){
+        loadCetakPelunasanUn();
+      });
+
+      $("#cetakDanaKeluarUn").click(function(){
+        loadCetakDanaKeluarUn();
+      });
+
+      function loadCetakHome() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "home/cetak")
+        .appendTo("body");           
+      }
+
+      function loadCetakDanaMasuk() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "dana_masuk/cetak")
+        .appendTo("body");           
+      }
+
+      function loadCetakDanaKeluar() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "dana_keluar/cetak")
+        .appendTo("body");           
+      }
+
+      function loadCetakPembayaranUas() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "pembayaran_uas/cetak")
+        .appendTo("body");           
+      }
+
+      function loadCetakDanaKeluarUas() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "dana_keluar_uas/cetak")
+        .appendTo("body");           
+      }
+
+      function loadCetakPelunasanUn() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "pelunasan_un/cetak")
+        .appendTo("body");           
+      }
+
+      function loadCetakDanaKeluarUn() {
+        $("<iframe id='printabel'>")    
+        .hide()                     
+        .attr("src", "dana_keluar_un/cetak")
+        .appendTo("body");           
+      }
     });
   </script>
 

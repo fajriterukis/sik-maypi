@@ -6,10 +6,10 @@
     <button type="button" id="btn-delete" class="btn btn-danger btn-sm float-right ml-2 mb-2">Hapus</button>
     <a href="<?= base_url('pembayaran_uas/tambah'); ?>" class="btn btn-primary btn-sm float-right ml-2 mb-2">Tambah</a>
     <a href="<?= base_url('pembayaran_uas/import'); ?>" class="tombol-import btn btn-info btn-sm float-right ml-2 mb-2">Import Excel</a>
-    <a href="<?= base_url('pembayaran_uas/cetak'); ?>" class="btn btn-success btn-sm float-right mb-2">
+    <button id="cetakPembayaranUas" class="btn btn-success btn-sm float-right mb-2">
       <i class="fa fa-print"></i>
       Cetak Laporan
-    </a>
+    </button>
     <form method="POST" action="pembayaran_uas/hapus" id="form-delete">
     <div class="table-responsive">
         <table class="table table-bordered nowrap" id="pembayaran_uas" width="100%" cellspacing="0">

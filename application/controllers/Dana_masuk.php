@@ -63,10 +63,6 @@ class Dana_masuk extends CI_Controller {
 		$data['jumlah_uang_denda'] = $this->M_dana_masuk->jumlah_uang_denda($tahun_ajaran['tahun_ajaran'])->row_array();
 		$data['tahun_ajaran']      = $tahun_ajaran;
 
-		$this->template->view('dana_masuk/cetak', $data);
-		
-		?>
-			<script>window.print()</script>
-		<?php
+		$this->template->print('dana_masuk/cetak', $data);
 	}
 }

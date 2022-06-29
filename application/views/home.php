@@ -25,10 +25,10 @@
   <div class="col-md-12">
     <h3 class="mb-3">Tahun Ajaran <?= $tahun_ajaran['tahun_ajaran']; ?></h3>
 
-    <a href="<?= base_url('home/cetak'); ?>" class="btn btn-success float-right ml-2 mb-2">
+    <button id="cetakHome" class="btn btn-success float-right ml-2 mb-2">
       <i class="fa fa-print"></i>
       Cetak Laporan
-    </a>
+    </button>
     <a href="<?= base_url('home/simpan'); ?>" class="btn btn-primary float-right">
       <i class="fa fa-file-download"></i>
       Simpan ke Sisa Dana
@@ -96,62 +96,6 @@
 <div class="row mb-2">
   <div class="col-xl-4 col-md-4">
     <div class="card border-left-primary shadow h-100 py-2">
-      <a href="<?= base_url('pelunasan_un'); ?>" class="nav-link">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Pelunasan UN+Sisa Dana UN Tahun Lalu</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($pelunasan_un_dan_tahun_lalu, 0, '.', '.'); ?></div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-file-download fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-     </a>
-    </div>
-  </div>
-
-  <div class="col-xl-4 col-md-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-      <a href="<?= base_url('dana_keluar_un'); ?>" class="nav-link">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Dana Keluar UN</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($total_dana_keluar_Un, 0, '.', '.'); ?></div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-file-upload fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-     </a>
-    </div>
-  </div>
-
-  <div class="col-xl-4 col-md-4">
-    <div class="card border-left-primary shadow h-100 py-2">
-      <a href="#" class="nav-link">
-      <div class="card-body">
-        <div class="row no-gutters align-items-center">
-          <div class="col mr-2">
-            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sisa Dana UN Saat Ini</div>
-            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($sisa_dana_un_saat_ini, 0, ',', '.'); ?></div>
-          </div>
-          <div class="col-auto">
-            <i class="fas fa-money-bill-alt fa-2x text-gray-300"></i>
-          </div>
-        </div>
-      </div>
-      </a>
-    </div>
-  </div>
-</div>
-
-<div class="row mb-2">
-  <div class="col-xl-4 col-md-4">
-    <div class="card border-left-primary shadow h-100 py-2">
       <a href="<?= base_url('pembayaran_uas'); ?>" class="nav-link">
       <div class="card-body">
         <div class="row no-gutters align-items-center">
@@ -194,6 +138,62 @@
           <div class="col mr-2">
             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sisa Dana UAS Saat Ini</div>
             <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($sisa_dana_uas_saat_ini, 0, ',', '.'); ?></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-money-bill-alt fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="row mb-2">
+  <div class="col-xl-4 col-md-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <a href="<?= base_url('pelunasan_un'); ?>" class="nav-link">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Pelunasan UN+Sisa Dana UN Tahun Lalu</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($pelunasan_un_dan_tahun_lalu, 0, '.', '.'); ?></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-file-download fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+     </a>
+    </div>
+  </div>
+
+  <div class="col-xl-4 col-md-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <a href="<?= base_url('dana_keluar_un'); ?>" class="nav-link">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Total Dana Keluar UN</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($total_dana_keluar_Un, 0, '.', '.'); ?></div>
+          </div>
+          <div class="col-auto">
+            <i class="fas fa-file-upload fa-2x text-gray-300"></i>
+          </div>
+        </div>
+      </div>
+     </a>
+    </div>
+  </div>
+
+  <div class="col-xl-4 col-md-4">
+    <div class="card border-left-primary shadow h-100 py-2">
+      <a href="#" class="nav-link">
+      <div class="card-body">
+        <div class="row no-gutters align-items-center">
+          <div class="col mr-2">
+            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">Sisa Dana UN Saat Ini</div>
+            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= "Rp.".number_format($sisa_dana_un_saat_ini, 0, ',', '.'); ?></div>
           </div>
           <div class="col-auto">
             <i class="fas fa-money-bill-alt fa-2x text-gray-300"></i>

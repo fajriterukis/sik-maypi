@@ -58,10 +58,6 @@ class Dana_keluar_uas extends CI_Controller {
 		$data['dana_keluar_uas'] = $this->M_dana_keluar_uas->tampil($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['total']           = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['tahun_ajaran']    = $tahun_ajaran;
-		$this->template->view('dana_keluar_uas/cetak', $data);
-
-		?>
-			<script>window.print()</script>
-		<?php
+		$this->template->print('dana_keluar_uas/cetak', $data);
 	}
 }

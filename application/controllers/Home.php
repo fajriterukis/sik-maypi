@@ -63,11 +63,7 @@ class Home extends CI_Controller {
 		$data['total_dana_keluar_uas'] = $this->M_dana_keluar_uas->total($tahun_ajaran['tahun_ajaran'])->row_array();
 
 		$data['tahun_ajaran']          = $tahun_ajaran;
-		$this->template->view('cetak_home', $data);
-
-		?>
-			<script>window.print()</script>
-		<?php
+		$this->template->print('cetak_home', $data);
 	}
 
 	public function simpan()

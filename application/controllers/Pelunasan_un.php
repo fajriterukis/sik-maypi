@@ -75,11 +75,7 @@ class Pelunasan_un extends CI_Controller {
 		$data['total']                = $this->M_pelunasan_un->total($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['ketentuan_pembayaran'] = $this->M_ketentuan_pembayaran->tampil($tahun_ajaran['tahun_ajaran'])->row_array();
 		$data['tahun_ajaran']         = $tahun_ajaran;
-		$this->template->view('pelunasan_un/cetak', $data);
-
-		?>
-			<script>window.print()</script>
-		<?php
+		$this->template->print('pelunasan_un/cetak', $data);
 	}
 
 	public function import()

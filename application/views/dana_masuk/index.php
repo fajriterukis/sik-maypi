@@ -4,10 +4,10 @@
   </div>
   <div class="card-body">
     <a href="<?= base_url('dana_masuk/tambah'); ?>" class="btn btn-primary btn-sm float-right ml-2 mb-2">Tambah</a>
-    <a href="<?= base_url('dana_masuk/cetak') ?>" class="btn btn-success btn-sm float-right mb-2">
+    <button id="cetakDanaMasuk" class="btn btn-success btn-sm float-right mb-2">
       <i class="fa fa-print"></i>
       Cetak Laporan
-    </a>
+    </button>
     <div class="table-responsive">
       <table class="table table-bordered nowrap" id="dana_masuk" width="100%">
         <thead>

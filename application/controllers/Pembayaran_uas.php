@@ -74,11 +74,7 @@ class Pembayaran_uas extends CI_Controller {
 		$data['total']                = $this->M_pembayaran_uas->total($tahun_ajaran['tahun_ajaran'])->result_array();
 		$data['ketentuan_pembayaran'] = $this->M_ketentuan_pembayaran->tampil($tahun_ajaran['tahun_ajaran'])->row_array();
 		$data['tahun_ajaran']         = $tahun_ajaran;
-		$this->template->view('pembayaran_uas/cetak', $data);
-
-		?>
-			<script>window.print()</script>
-		<?php
+		$this->template->print('pembayaran_uas/cetak', $data);
 	}
 
 	public function import()
