@@ -1,0 +1,30 @@
+body {
+    background-image: url(../img/bg-login.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.card {
+    background-color: rgba(0, 50, 142, 0.5);
+}
+
+h5.si-title {
+    color: white;
+    font-weight: bold;
+}
+
+button.btn-user {
+    background-color: #00a8ce;
+    color: white;
+    font-weight: bold;
+}
+
+button.btn-user:hover {
+    color: yellow;
+}
+
+@media only screen and (max-width: 400px) {
+    h5.si-title {
+        font-size: 14px;
+    }
+}
