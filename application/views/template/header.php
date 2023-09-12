@@ -16,20 +16,7 @@
         rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.css" />
     <link rel="shortcut icon" href="<?=base_url('assets/img/logo.ico');?>">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
-        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <style>
-    body,
-    table,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        color: black !important;
-    }
-    </style>
+    <link rel="stylesheet" href="<?=base_url('assets/css/style.css');?>">
 </head>
 
 <body id="page-top">
