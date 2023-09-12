@@ -1,210 +1,62 @@
         </div>
         <!-- /.container-fluid -->
 
-      </div>
-      <!-- End of Main Content -->
-
-
-<!-- Footer -->
-      <footer class="sticky-footer bg-white">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span class="font-weight-bold text-dark">Built With <span class="fa fa-heart text-danger"></span> by Fajri &copy; 2020 </span>
-          </div>
         </div>
-      </footer>
-      <!-- End of Footer -->
+        <!-- End of Main Content -->
 
-    </div>
-    <!-- End of Content Wrapper -->
 
-  </div>
-  <!-- End of Page Wrapper -->
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span class="font-weight-bold text-dark">Built With <span class="fa fa-heart text-danger"></span> by
+                        Fajri &copy; 2020 </span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
-
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
         </div>
-        <div class="modal-body">Yakin ingin logout?</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="<?= base_url('auth/logout'); ?>">Logout</a>
+        <!-- End of Content Wrapper -->
+
         </div>
-      </div>
-    </div>
-  </div>
+        <!-- End of Page Wrapper -->
 
-  <!-- Bootstrap core JavaScript-->
-  <script src="<?= base_url('assets/') ?>bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- Scroll to Top Button-->
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fas fa-angle-up"></i>
+        </a>
 
-  <!-- Core plugin JavaScript-->
-  <script src="<?= base_url('assets/') ?>jquery-easing/jquery.easing.min.js"></script>
+        <!-- Logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Logout</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Yakin ingin logout?</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="<?=base_url('auth/logout');?>">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  <!-- Custom scripts for all pages-->
-  <script src="<?= base_url('assets/') ?>js/sb-admin-2.min.js"></script>
+        <script src="https://cdn.usebootstrap.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
+            integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/startbootstrap-sb-admin-2/4.1.4/js/sb-admin-2.js"
+            integrity="sha512-M82XdXhPLLSki+Ld1MsafNzOgHQB3txZr8+SQlGXSwn6veeqtYhPLbQeAfk9Y/Q9/gXcfa1jWT4YYUeoei6Uow=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.12.1/datatables.min.js"></script>
+        <script src="<?=base_url('assets/js/scripts.js');?>"></script>
 
-  <script src="<?= base_url('assets/datatables/datatables.min.js') ?>"></script>
+        </body>
 
-
-  <script>
-    $(document).ready(function(){
-      $('#dana_masuk').DataTable( {
-        stateSave: true
-      });
-
-      $('#dana_keluar').DataTable({
-        stateSave: true
-      });
-
-      $('#pembayaran_uas').DataTable({
-        stateSave: true,
-        "columnDefs": [{
-          "targets": 0,
-          "orderable": false,
-          }]
-      });
-
-      $('#dana_keluar_uas').DataTable({
-        stateSave: true
-      });
-      
-      $('#pelunasan_un').DataTable({
-        stateSave: true,
-        "columnDefs": [{
-          "targets": 0,
-          "orderable": false,
-        }]
-      });
-
-      $('#dana_keluar_un').DataTable({
-        stateSave: true
-      });
-
-      $('#hutang').DataTable({
-        stateSave: true
-      });
-
-      var url     = $(location).attr('href');
-      var pisah   = url.split('/');
-      var segment = pisah[4];
-
-      if( segment == 'dana_masuk' || segment == 'dana_keluar' ){
-        $('.denda_infaq').removeClass('collapsed');
-      }
-      if( segment == 'pembayaran_uas' || segment == 'dana_keluar_uas' ){
-        $('.uas').removeClass('collapsed');
-      }
-      if( segment == 'pelunasan_un' || segment == 'dana_keluar_un' ){
-        $('.un').removeClass('collapsed');
-      }
-      if( segment == 'pengaturan' || segment == 'ketentuan_pembayaran' ){
-        $('.pengaturan').removeClass('collapsed');
-      }
-
-      $("#check-all").click(function(){ // Ketika user men-cek checkbox all
-        if($(this).is(":checked")) // Jika checkbox all diceklis
-          $(".check-item").prop("checked", true); // ceklis semua checkbox siswa dengan class "check-item"
-        else // Jika checkbox all tidak diceklis
-          $(".check-item").prop("checked", false); // un-ceklis semua checkbox siswa dengan class "check-item"
-      });
-      
-      $("#btn-delete").click(function(){ // Ketika user mengklik tombol delete
-        var confirm = window.confirm("Apakah Anda yakin ingin menghapus data-data ini?"); // Buat sebuah alert konfirmasi
-        
-        if(confirm) // Jika user mengklik tombol "Ok"
-          $("#form-delete").submit(); // Submit form
-      });
-
-      // Cetak
-      $("#cetakHome").click(function(){
-        loadCetakHome();
-      });
-
-      $("#cetakDanaMasuk").click(function(){
-        loadCetakDanaMasuk();
-      });
-
-      $("#cetakDanaKeluar").click(function(){
-        loadCetakDanaKeluar();
-      });
-
-      $("#cetakPembayaranUas").click(function(){
-        loadCetakPembayaranUas();
-      });
-
-      $("#cetakDanaKeluarUas").click(function(){
-        loadCetakDanaKeluarUas();
-      });
-
-      $("#cetakPelunasanUn").click(function(){
-        loadCetakPelunasanUn();
-      });
-
-      $("#cetakDanaKeluarUn").click(function(){
-        loadCetakDanaKeluarUn();
-      });
-
-      function loadCetakHome() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "home/cetak")
-        .appendTo("body");           
-      }
-
-      function loadCetakDanaMasuk() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "dana_masuk/cetak")
-        .appendTo("body");           
-      }
-
-      function loadCetakDanaKeluar() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "dana_keluar/cetak")
-        .appendTo("body");           
-      }
-
-      function loadCetakPembayaranUas() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "pembayaran_uas/cetak")
-        .appendTo("body");           
-      }
-
-      function loadCetakDanaKeluarUas() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "dana_keluar_uas/cetak")
-        .appendTo("body");           
-      }
-
-      function loadCetakPelunasanUn() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "pelunasan_un/cetak")
-        .appendTo("body");           
-      }
-
-      function loadCetakDanaKeluarUn() {
-        $("<iframe id='printabel'>")    
-        .hide()                     
-        .attr("src", "dana_keluar_un/cetak")
-        .appendTo("body");           
-      }
-    });
-  </script>
-
-</body>
-</html>
+        </html>
