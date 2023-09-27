@@ -1,47 +1,71 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class M_user extends CI_Model {
+class M_user extends CI_Model
+{
+    public function tampil()
+    {
+        $query = $this->db->get('user');
+        return $query;
+    }
 
-	public function tampil()
-	{
-		$query = $this->db->get('user');
-		return $query;
-	}
+    public function tampil_perUsername($username)
+    {
+        $query = $this->db->where("username = BINARY '$username'")->get('user');
+        return $query;
+    }
 
-	public function tampil_perUsername($username)
-	{
-		$query = $this->db->get_where('user', ['username' => $username]);
-		return $query;
-	}
+    public function edit_nama($id)
+    {
+        $data = [
+            'nama' => $this->input->post('nama'),
+        ];
 
-	public function edit_nama($id)
-	{
-		$data = [
-			'nama'     => $this->input->post('nama'),
-		];
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);
+    }
 
-		$this->db->where('id', $id);
-		$this->db->update('user', $data);
-	}
+    public function edit_username($id)
+    {
+        $data = [
+            'username' => $this->input->post('username'),
+        ];
 
-	public function edit_username($id)
-	{
-		$data = [
-			'username'     => $this->input->post('username'),
-		];
+        $this->db->where('id', $id);
+        $this->db->update('user', $data);
+    }
 
-		$this->db->where('id', $id);
-		$this->db->update('user', $data);
-	}
+    public function ganti_password($password_baru)
+    {
+        $data = [
+            'password' => $password_baru,
+        ];
 
-	public function ganti_password($password_baru)
-	{
-		$data = [
-			'password' => $password_baru		
-		];
+        $this->db->where('username', userLogin()['username']);
+        $this->db->update('user', $data);
+    }
 
-		$this->db->where('username', userLogin()['username']);
-		$this->db->update('user', $data);
-	}
+    public function editFoto($foto)
+    {
+        $username = userLogin()['username'];
+
+        $data = [
+            'foto' => $foto,
+        ];
+
+        $this->db->where('username', $username);
+        $this->db->update('user', $data);
+    }
+
+    public function deleteFoto()
+    {
+        $username = userLogin()['username'];
+
+        $data = [
+            'foto' => '',
+        ];
+
+        $this->db->where('username', $username);
+        $this->db->update('user', $data);
+    }
 }
