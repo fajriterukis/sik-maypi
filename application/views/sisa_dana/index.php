@@ -9,19 +9,19 @@
                     <table id="sisa_dana" class="table table-bordered">
                         <thead>
                             <tr>
+                                <th>Tahun Ajaran</th>
                                 <th>Dana Denda+Infaq</th>
                                 <th>Dana UN</th>
                                 <th>Dana UAS</th>
-                                <th>Tahun Ajaran</th>
                             </tr>
                         </thead>
                         <tbody>
                             <?php foreach ($sisa_dana as $sd): ?>
                             <tr>
+                                <td><?=$sd['tahun_ajaran'];?></td>
                                 <td><?="Rp." . number_format($sd['denda_infaq'], 0, ',', '.');?></td>
                                 <td><?="Rp." . number_format($sd['un'], 0, ',', '.');?></td>
                                 <td><?="Rp." . number_format($sd['uas'], 0, ',', '.');?></td>
-                                <td><?=$sd['tahun_ajaran'];?></td>
                             </tr>
                             <?php endforeach;?>
                         </tbody>
