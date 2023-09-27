@@ -159,3 +159,30 @@ $(document).ready(function () {
 			.appendTo("body");
 	}
 });
+
+// VALIDASI UPLOAD FOTO PROFIL
+$("#form-upload-profile").submit(function (event) {
+	let fileInput = $("#foto");
+	let fileSize = fileInput[0].files[0].size;
+	let maxSize = 2048 * 1024; // 2mb
+
+	let fileName = fileInput.val();
+	let fileExtension = fileName
+		.substring(fileName.lastIndexOf(".") + 1)
+		.toLowerCase();
+
+	if (fileSize > maxSize) {
+		$(".error-upload").html("Ukuran file terlalu besar. Maksimum adalah 2MB");
+		event.preventDefault();
+	}
+
+	if (
+		fileExtension !== "jpg" &&
+		fileExtension !== "png" &&
+		fileExtension !== "jpeg"
+	) {
+		$(".error-upload").html("Hanya menerima format gambar");
+		event.preventDefault();
+	}
+});
+// ./VALIDASI UPLOAD FOTO PROFIL
