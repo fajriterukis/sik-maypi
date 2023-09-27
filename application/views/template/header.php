@@ -122,14 +122,15 @@
                     Pengaturan
                 </div>
 
-                <li class="nav-item <?=active('pengaturan') || active('ketentuan_pembayaran')?>">
+                <li
+                    class="nav-item <?=active('pengaturan') || active('ketentuan_pembayaran') || active('data_sekolah')?>">
                     <a class="nav-link collapsed pengaturan" href="#" data-toggle="collapse" data-target="#pengaturan"
                         aria-expanded="true" aria-controls="pengaturan">
                         <i class="fas fa-fw fa-cog"></i>
                         <span>Pengaturan</span>
                     </a>
                     <div id="pengaturan"
-                        class="collapse  <?=show('pengaturan') || show('ketentuan_pembayaran') || show('data_sekolah')?>"
+                        class="collapse <?=show('pengaturan') || show('ketentuan_pembayaran') || show('data_sekolah')?>"
                         aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                         <div class="bg-white py-2 collapse-inner rounded">
                             <a class="collapse-item <?=active('pengaturan')?>" href="<?=base_url('pengaturan')?>">Tahun
@@ -172,7 +173,13 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span
                                     class="mr-2 d-none d-lg-inline text-gray-600 small"><?=userLogin()['nama'];?></span>
-                                <img class="img-profile rounded-circle" src="<?=base_url('assets/img/logo.png');?>">
+                                <?php if (userLogin()['foto']): ?>
+                                <img class="img-profile rounded-circle"
+                                    src="<?=base_url('assets/upload/profile/thumbnails/' . userLogin()['foto']);?>">
+                                <?php else: ?>
+                                <img class="img-profile rounded-circle"
+                                    src="<?=base_url('assets/img/user.png' . userLogin()['foto']);?>">
+                                <?php endif;?>
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
